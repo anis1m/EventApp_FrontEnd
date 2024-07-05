@@ -1,0 +1,79 @@
+.step3 {
+  height: 100vh;
+  width: 100%;
+  background: linear-gradient(
+      0deg,
+      rgba(255, 255, 255, 0.5),
+      rgba(255, 255, 255, 0.5)
+    ),
+    url("../../public/images_/stylishbackground.jpg");
+  border-radius: 0.5rem;
+  background-size: cover;
+  background-position: center;
+  overflow-y: scroll;
+}
+
+.insideStep3 {
+  width: 30%;
+
+  margin: auto;
+  min-height: 80vh;
+  padding-bottom: 7rem;
+}
+.insideStep3 form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  align-items: baseline;
+  justify-content: left;
+}
+
+.insideStep3 form aside {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  align-items: baseline;
+  justify-content: left;
+  width: 100%;
+}
+
+.insideStep3 form aside input,
+.insideStep3 form aside select {
+  width: 100%;
+  padding: 1rem;
+  border: 1px solid black;
+  border-radius: 0.5rem;
+  font-size: 1rem;
+}
+
+.languages {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  row-gap: 1rem;
+  column-gap: 1.5rem;
+  margin: 2rem 0;
+}
+
+.languages dd {
+  display: flex;
+  align-items: center;
+  justify-content: left;
+  gap: 0.5rem;
+}
+
+.languages dd input {
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
+.languages dd label {
+  width: 70%;
+}
+
+.insideStep3 form div {
+  margin-top: 1rem;
+}
+.insideStep3 form div p {
+  font-weight: 600;
+}

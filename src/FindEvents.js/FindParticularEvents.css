@@ -1,0 +1,158 @@
+.findParticularEvents {
+  width: 100%;
+  height: 100vh;
+  overflow: auto;
+}
+
+.breadCrumb {
+  width: 100%;
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: left;
+  gap: 0.5rem;
+}
+
+.breadCrumb a {
+  font-size: 13px;
+  color: blue;
+  text-decoration: underline;
+}
+
+.breadCrumb p {
+  font-size: 1.2rem;
+}
+
+.insideFindParticularEvents {
+  width: 100%;
+  display: flex;
+  gap: 1rem;
+}
+
+.leftPartofFindParticularEvents {
+  flex-basis: 60%;
+}
+
+#titlePartofFindParticularEvents {
+  padding: 1rem;
+  width: 100%;
+}
+
+#titlePartofFindParticularEvents h1 {
+  font-size: 1.7rem;
+}
+
+.leftRightParticular {
+  width: 100%;
+  display: flex;
+}
+
+.leftPartofInsideFindParticularEvents {
+  flex-basis: 20%;
+  padding: 1rem;
+}
+
+.RightPartofInsideFindParticularEvents {
+  flex-basis: 80%;
+}
+
+.leftPartofInsideFindParticularEvents dl dd {
+  display: flex;
+  align-items: center;
+  justify-content: left;
+  gap: 0.5rem;
+  padding: 1rem 0 1rem 0;
+  color: blue;
+  cursor: pointer;
+}
+
+.leftPartofInsideFindParticularEvents button {
+  padding: 0.7rem 1.7rem;
+  border-radius: 0.3rem;
+  border: 2px solid gray;
+  background-color: white;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.leftPartofInsideFindParticularEvents dl dd p:hover {
+  text-decoration: underline;
+}
+
+#leftPartOfInsideFilter {
+  display: none;
+}
+
+.leftPartofInsideFindParticularEvents h1 {
+  font-size: 1.5rem;
+}
+
+.leftPartofInsideFindParticularEvents h4 {
+  margin: 1.5rem 0 1rem 0;
+}
+
+.leftPartofInsideFindParticularEvents ul li {
+  list-style: none;
+  padding: 0.5rem 0;
+  display: flex;
+  align-items: center;
+  justify-content: left;
+  gap: 0.5rem;
+}
+
+.leftPartofInsideFindParticularEvents ul li input {
+  height: 1.3rem;
+  width: 1.3rem;
+}
+
+.leftPartofInsideFindParticularEvents ul li label {
+  font-weight: 600;
+  font-size: 15px;
+  color: gray;
+}
+
+.detailTileLayoutofParticularEvent {
+  width: 100%;
+  display: flex;
+  align-items: start;
+  justify-content: left;
+  gap: 1rem;
+  margin: 1rem 0;
+  border-radius: 1rem;
+  padding: 1rem;
+}
+
+.detailTileLayoutofParticularEvent:hover {
+  box-shadow: 0 0 1rem lightgray;
+}
+
+.detailTileLayoutofParticularEvent aside {
+  display: flex;
+  align-items: baseline;
+  justify-content: left;
+  gap: 0.5rem;
+  flex-direction: column;
+}
+
+.detailTileLayoutofParticularEvent img {
+  width: 13rem;
+  height: 8rem;
+  cursor: pointer;
+}
+
+.RightPartofInsideFindParticularEvents figure {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  position: absolute;
+  right: 2rem;
+  bottom: 1rem;
+  cursor: pointer;
+}
+
+.rightPartofFindParticularEvents {
+  flex-basis: 40%;
+  width: 100%;
+  height: 1000px;
+  background-color: yellow;
+}

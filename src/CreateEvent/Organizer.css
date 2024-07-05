@@ -1,0 +1,18 @@
+.organizer {
+  height: 60px;
+  width: 100%;
+  background-color: rgb(12, 12, 59);
+}
+
+.insideOrganizer {
+  padding: 1.5rem;
+}
+.organizer aside {
+  display: inline-block;
+  color: white;
+  margin-right: 2rem;
+}
+
+.organizer aside a {
+  margin-right: 0.5rem;
+}

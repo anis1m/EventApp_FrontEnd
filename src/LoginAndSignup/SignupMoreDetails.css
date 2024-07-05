@@ -1,0 +1,17 @@
+.moresignupdetails aside {
+  display: flex;
+  align-items: center;
+  justify-content: left;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+
+.moresignupdetails aside input {
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
+.moresignupdetails button {
+  margin-top: 3rem;
+  cursor: pointer;
+}

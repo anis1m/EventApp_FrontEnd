@@ -1,0 +1,128 @@
+.accountmain {
+  width: 100%;
+  height: 93.52vh;
+  display: flex;
+}
+
+.accountsidenavigation {
+  width: 23rem;
+  height: 100%;
+  background-color: whitesmoke;
+}
+
+.accountmainsection {
+  width: 100%;
+  height: 100%;
+  background-color: white;
+
+  overflow-y: scroll;
+}
+
+.insideaccountmainsection {
+  width: 100%;
+  height: 100%;
+  margin: auto;
+}
+
+.accountheader {
+  width: 75%;
+  height: 120px;
+  margin: auto;
+  border-bottom: 1px solid lightgray;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+#accountheaderinfo {
+  font-weight: 700;
+  font-size: 2rem;
+  margin-bottom: -3rem;
+}
+
+#profilephoto {
+  padding: 1rem 0;
+  width: 75%;
+
+  margin: auto;
+  height: 20rem;
+  display: flex;
+  flex-direction: column;
+  align-items: baseline;
+  justify-content: left;
+  gap: 1rem;
+}
+
+#profileimage {
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.contactform {
+  width: 75%;
+  margin: auto;
+  display: flex;
+  align-items: baseline;
+  justify-content: left;
+  flex-direction: column;
+  padding-bottom: 3rem;
+}
+
+.HomeBillingEtcAddresses {
+  width: 75%;
+  margin: auto;
+}
+
+.contactform h1 {
+  font-size: 1.7rem;
+}
+
+.contactform div {
+  display: flex;
+  align-items: center;
+  justify-content: left;
+}
+
+.contactform aside input,
+.contactform aside select {
+  padding: 1rem;
+  border: 1px solid lightgray;
+  width: 100%;
+  font-size: 1rem;
+}
+
+.contactform aside {
+  display: flex;
+  flex-direction: column;
+  align-items: baseline;
+  justify-content: left;
+  width: 25rem;
+  padding-bottom: 1rem;
+  margin: 1rem 2rem 0 0;
+  gap: 0.5rem;
+}
+
+#sidenavtitle {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem;
+  cursor: pointer;
+}
+
+#sidenavoptions {
+  display: flex;
+  align-items: baseline;
+  justify-content: left;
+  flex-direction: column;
+}
+
+#sidenavoptions p {
+  padding: 1rem 2rem;
+  width: 100%;
+  text-decoration: none;
+  font-weight: 600;
+  background-color: whitesmoke;
+  color: gray;
+}

@@ -1,0 +1,49 @@
+.carousalImages {
+  margin-top: 1rem;
+  white-space: nowrap;
+}
+
+.slider {
+  overflow-x: hidden;
+  width: 100%;
+}
+
+.carousalImages figure {
+  width: 100%;
+  height: fit-content;
+  flex: 1;
+  padding-bottom: 13px;
+  margin: 0 auto;
+  display: inline-block;
+  text-align: center;
+}
+
+.carousalImages figure img {
+  border-radius: 1rem;
+  width: 90%;
+  height: 450px;
+}
+
+#next {
+  position: absolute;
+  top: 325px;
+  right: 0px;
+  padding: 15px;
+  background-color: transparent;
+  cursor: pointer;
+  color: white;
+  text-shadow: 0 0 5px gray;
+  font-size: 3rem;
+}
+
+#previous {
+  position: absolute;
+  top: 325px;
+  left: 0px;
+  padding: 15px;
+  cursor: pointer;
+  color: white;
+  background-color: transparent;
+  text-shadow: 0px 0px 5px gray;
+  font-size: 3rem;
+}

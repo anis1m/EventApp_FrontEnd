@@ -1,0 +1,33 @@
+.changemail {
+  width: 100%;
+}
+
+.insidechangemail {
+  width: 75%;
+  margin: auto;
+}
+
+.insidechangemail aside h1 {
+  font-size: 2rem;
+}
+
+.insidechangemail aside {
+  width: 100%;
+  padding: 1rem 0 2rem 0;
+  border-bottom: 1px solid lightgray;
+}
+
+.insidechangemail aside p {
+  margin: 1rem 0;
+  font-weight: 600;
+  color: gray;
+}
+
+.insidechangemail aside button {
+  padding: 0.7rem 1.4rem;
+  border: 2px solid gray;
+  background-color: white;
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: 5px;
+}

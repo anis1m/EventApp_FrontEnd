@@ -1,0 +1,81 @@
+.insideEventRegisteration {
+  background-color: peachpuff;
+  width: 100%;
+  height: 100vh;
+  border-radius: 0.5rem;
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: left;
+  gap: 9rem;
+}
+
+.eventRegisteration {
+  background-color: black;
+}
+
+.EventRegisterationProcess {
+  height: 100%;
+  display: inline-block;
+  background-color: white;
+  border-radius: 0.5rem;
+  padding: 4rem 3rem;
+  flex-basis: 52%;
+}
+
+.insideEventRegisterationProcess h4 {
+  color: gray;
+}
+
+#know_You {
+  font-size: 2rem;
+  font-weight: 600;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+}
+
+#kindOfEvent {
+  margin-top: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.insideEventRegisterationProcess aside button {
+  padding: 1rem;
+  border-radius: 1.5rem;
+  margin: 1rem 0.5rem 0 0;
+}
+
+#moreOptions {
+  color: blue;
+  margin-top: 1.5rem;
+  cursor: pointer;
+}
+
+#numberOfEvents {
+  margin-top: 3rem;
+}
+
+#numberOfEvents select {
+  padding: 1rem;
+  margin-top: 1rem;
+  border: 1px solid gray;
+  width: 35rem;
+  border-radius: 0.5rem;
+  font-size: 1rem;
+}
+
+#eventmanagementicon img {
+  width: 40rem;
+  height: 30rem;
+}
+
+#submitFirstStep {
+  background-color: red;
+  color: white;
+  width: 100%;
+  border-radius: 0.5rem;
+  height: 50px;
+  font-size: 1rem;
+  margin-top: 5rem;
+  font-weight: 600;
+}

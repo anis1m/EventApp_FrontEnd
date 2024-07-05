@@ -1,0 +1,104 @@
+.card {
+  width: 100%;
+  min-height: 35rem;
+  white-space: nowrap;
+}
+
+.card-body {
+  display: inline-block;
+  min-height: 31rem;
+  margin-right: 1rem;
+}
+
+.card-header {
+  width: 100%;
+  min-height: 31rem;
+}
+
+.slideLeftRight {
+  width: 70%;
+  margin: auto;
+  overflow-x: scroll;
+}
+
+.card-content {
+  width: 20rem;
+  margin-top: 1rem;
+  margin-left: 0.5rem;
+  min-height: 25rem;
+  border-radius: 1rem;
+}
+
+.card-content img {
+  width: 20rem;
+  height: 10rem;
+  border-radius: 0.5rem;
+}
+
+.eventOffer {
+  width: 70%;
+  margin: auto;
+  margin-top: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: left;
+  gap: 1rem;
+}
+
+.card-details {
+  padding: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  align-items: baseline;
+  justify-content: left;
+  margin-left: 0.5rem;
+  white-space: wrap;
+}
+
+#sales-and-arrivation {
+  padding: 0.7rem;
+  background-color: orange;
+  color: red;
+  border-radius: 0.5rem;
+}
+
+.followers {
+  display: flex;
+  align-items: center;
+  justify-content: left;
+  gap: 0.5rem;
+}
+
+.card-content:hover {
+  box-shadow: 5px 5px 5px lightgray;
+}
+
+.eventOffer h2 {
+  margin-right: auto;
+}
+
+#lefty {
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  background-color: white;
+
+  border: 1px solid gray;
+}
+#righty {
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  background-color: white;
+
+  border: 1px solid gray;
+}
+
+#lefty i {
+  font-size: 20px;
+}
+
+#righty i {
+  font-size: 20px;
+}

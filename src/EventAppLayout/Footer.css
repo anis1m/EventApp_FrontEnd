@@ -1,0 +1,180 @@
+.footer {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.footer-top-section {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  column-gap: 1rem;
+  padding: 2rem;
+}
+
+.footer-section-1 {
+  display: flex;
+  align-items: baseline;
+  gap: 1rem;
+  flex-direction: column;
+}
+
+.footer-section-1 aside {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+.footer-section-1 figure {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.footer-section-1 figure img {
+  width: 140px;
+  height: 100px;
+}
+
+.footer-section-5 {
+  display: flex;
+}
+
+.footer-section-2 {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.footer-section-2 h3 {
+  margin-bottom: 1rem;
+}
+
+.footer-section-2 aside {
+  padding-left: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.footer-section-3 {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.footer-section-3 aside {
+  padding-left: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.footer-section-4 {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.footer-section-4 form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding: 1.5rem 1rem;
+  border-radius: 1.5rem;
+  background-color: lightgray;
+  margin-top: 1rem;
+}
+
+.footer-section-4 form input {
+  padding: 0.5rem;
+  font-size: 1rem;
+  border-radius: 0.5rem;
+}
+
+.footer-section-4 form textarea {
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  font-size: 1rem;
+}
+
+.footer-section-4 form label {
+  font-size: 1rem;
+  font-weight: 600;
+  margin-top: 0.5rem;
+}
+
+.footer-section-4 form button {
+  text-align: center;
+  color: white;
+  font-size: 1rem;
+  background-color: purple;
+  border-radius: 0.5rem;
+  padding: 0.5rem;
+  margin-top: 0.5rem;
+}
+
+.footer-section-5 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  flex-direction: column;
+  background: linear-gradient(270deg, gray, lightgray, whitesmoke);
+}
+
+.footer-section-5 figure {
+  width: fit-content;
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  margin-top: 1rem;
+}
+
+.footer-section-5 figure i {
+  font-size: 2rem;
+}
+/*
+@media (max-width: 768px) {
+  .footer-top-section {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .footer-section-1,
+  .footer-section-2,
+  .footer-section-3,
+  .footer-section-4 {
+    flex: 1 1 100%;
+    text-align: center;
+  }
+
+  .footer-section-1 aside,
+  .footer-section-1 figure {
+    flex-direction: column;
+  }
+
+  .footer-section-2 aside,
+  .footer-section-3 aside {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .footer-top-section {
+    background-color: red;
+  }
+  .footer-section-1 img {
+    width: 30px;
+  }
+
+  .footer-section-1 figure img {
+    width: 20px;
+  }
+
+  .footer-section-5 figure i {
+    font-size: 18px;
+  }
+}*/

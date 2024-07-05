@@ -1,0 +1,144 @@
+.eventInterface {
+  width: 100%;
+  height: 100vh;
+  background: linear-gradient(
+      0deg,
+      rgba(255, 255, 255, 0.9),
+      rgba(255, 255, 255, 0.9)
+    ),
+    url("../../public/images_/eventappbackground.jpg");
+  overflow-y: scroll;
+}
+
+.insideEventInterface {
+  width: 70%;
+  margin: auto;
+  padding: 3rem 0;
+}
+
+.likeandshareEvent {
+  display: flex;
+  margin: 3rem 0 1rem 0;
+  align-items: center;
+  justify-content: left;
+  height: fit-content;
+}
+
+.likeandshareEvent h1 {
+  font-size: 1.5rem;
+}
+
+.likeandshareEvent aside {
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.likeandshareEvent aside i {
+  font-size: 1.5rem;
+}
+
+.insideEventInterface img {
+  width: 100%;
+  height: 40rem;
+  border-radius: 1rem;
+}
+
+.insideEventInterfaceDetails {
+  display: flex;
+  align-items: baseline;
+  justify-content: left;
+  gap: 1rem;
+}
+
+.insideEventInterfaceDetails article {
+  flex-basis: 75%;
+  display: flex;
+  flex-direction: column;
+  align-items: baseline;
+  justify-content: left;
+  gap: 1rem;
+}
+
+.insideEventInterfaceDetails div {
+  flex-basis: 25%;
+}
+
+#eventInterfaceContact {
+  display: flex;
+  align-items: center;
+  justify-content: left;
+  gap: 0.5rem;
+}
+
+.bookTicketBlock {
+  flex-basis: 25%;
+  min-height: 15rem;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  border-radius: 1rem;
+  border: 1px solid gray;
+  padding: 1rem;
+}
+
+.insideBookTicketBook {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1rem;
+  border-radius: 1rem;
+  border: 2px solid blue;
+}
+
+#clicktoknowlocationandDistance {
+  display: flex;
+  align-items: center;
+  justify-content: left;
+  gap: 0.5rem;
+}
+
+#clicktoknowlocationandDistance button {
+  padding: 0.5rem;
+  border: 1px solid gray;
+  border-radius: 0.3rem;
+  cursor: pointer;
+}
+
+.insideBookTicketBook aside {
+  display: flex;
+  align-items: baseline;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.insideBookTicketBook aside button {
+  padding: 0.5rem 0.7rem;
+  border-radius: 0.5rem;
+  font-size: 1rem;
+}
+
+.insideBookTicketBook aside p {
+  font-size: 1.2rem;
+}
+
+.insideEventInterfaceDetails article aside {
+  display: flex;
+  align-items: baseline;
+  justify-content: left;
+  gap: 0.5rem;
+  flex-direction: column;
+}
+
+.bookTicketBlock button {
+  padding: 1rem;
+  font-size: 1rem;
+  color: white;
+  background-color: brown;
+  border-radius: 0.5rem;
+  margin-top: 1rem;
+  width: 100%;
+  text-align: center;
+}

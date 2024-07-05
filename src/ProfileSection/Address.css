@@ -1,0 +1,45 @@
+.address {
+  width: 100%;
+  padding-bottom: 3rem;
+}
+
+.multiform h1 {
+  font-size: 1.7rem;
+}
+
+.multiform aside {
+  display: flex;
+  flex-direction: column;
+  align-items: baseline;
+  justify-content: left;
+  width: 52rem;
+  padding-bottom: 1rem;
+  gap: 0.5rem;
+  margin: 1rem 2rem 0 0;
+}
+
+.multiform aside input,
+.multiform aside select,
+.multiform div span input {
+  padding: 1rem;
+  border: 1px solid lightgray;
+  width: 100%;
+  font-size: 1rem;
+}
+
+.multiform div {
+  display: flex;
+  align-items: center;
+  justify-content: left;
+}
+
+.multiform div span {
+  display: flex;
+  flex-direction: column;
+  align-items: baseline;
+  justify-content: left;
+  width: 25rem;
+  padding-bottom: 1rem;
+  margin: 1rem 2rem 0 0;
+  gap: 0.5rem;
+}

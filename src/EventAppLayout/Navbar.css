@@ -1,0 +1,287 @@
+.navbar {
+  display: flex;
+  height: fit-content;
+  align-items: start;
+  justify-content: left;
+  width: 100%;
+  border-bottom: 3px solid purple;
+  padding: 0 1rem;
+}
+
+#navbarHeaderSection {
+  height: fit-content;
+  display: flex;
+  align-items: start;
+  width: 100%;
+  padding: 1rem 2rem;
+
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+#FaCalender {
+  font-size: 3rem;
+}
+
+.navbaruppermenu {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: 4px;
+  border-bottom: 2px solid lightgray;
+}
+
+.navbaruppermenu aside {
+  display: flex;
+  color: purple;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.navbaruppermenu blockquote {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background-color: purple;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+}
+
+.navbaruppermenu blockquote i {
+  font-size: 1.5rem;
+  color: white;
+}
+.navbaruppermenu blockquote a {
+  text-decoration: none;
+  font-weight: 600;
+  color: white;
+  font-size: 1.2rem;
+}
+
+.navbaruppermenu aside aside a {
+  text-decoration: none;
+  font-weight: 600;
+  color: purple;
+  font-size: 1.2rem;
+}
+
+#fa-CircleUser {
+  font-size: 3rem;
+}
+
+.navbaruppermenu aside i {
+  font-size: 1.5rem;
+}
+#i1,
+#i2 {
+  display: flex;
+  align-items: center;
+  justify-content: left;
+  gap: 0.5rem;
+  border: 1px solid lightgray;
+  padding: 0.5rem 2.5rem;
+  border-radius: 0.5rem;
+}
+
+#i1 i,
+#i2 i {
+  font-size: 1.5rem;
+  color: purple;
+}
+
+#i1 input {
+  width: 4rem;
+  font-size: 1.2rem;
+  outline: none;
+}
+
+#i2 select {
+  width: 6rem;
+  font-size: 1.2rem;
+  outline: none;
+}
+/*
+.navSearch {
+  display: flex;
+  align-items: center;
+  border: 1px solid lightgray;
+  border-bottom-right-radius: 20px;
+  border-top-right-radius: 20px;
+  border-bottom-left-radius: 20px;
+  border-top-left-radius: 20px;
+  margin-left: 30px;
+  margin-right: auto;
+  padding-right: 1rem;
+}
+
+.navbar #i1 {
+  border-right: 1px dashed black;
+  margin-left: 10px;
+  width: auto;
+}
+.navbar #i2 {
+  border-left: none;
+  margin-left: 10px;
+  width: auto;
+}*/
+
+.navSearch:hover,
+.navSearch:hover {
+  box-shadow: 5px 5px 5px lightgray;
+}
+/*
+.navbar #i1 input,
+.navbar #i2 input {
+  width: 450px;
+  padding: 0.3rem;
+  height: 40px;
+  background: transparent;
+  font-size: 16px;
+  outline: none;
+}*/
+
+.navSearch #i1 i {
+  padding: 8px;
+}
+
+.navSearch #i2 i {
+  padding: 8px;
+}
+
+.menus {
+  width: 100%;
+  display: flex;
+  align-items: start;
+  justify-content: space-between;
+}
+
+#navbarHeaderHelpRedirect {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: purple;
+}
+
+.menus blockquote {
+  display: flex;
+  align-items: center;
+  justify-content: left;
+  gap: 1.5rem;
+}
+
+.menus blockquote a {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: purple;
+  text-decoration: none;
+}
+.menus aside {
+  display: flex;
+  align-items: center;
+  justify-content: left;
+  gap: 1.3rem;
+}
+
+.menus aside a {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: purple;
+  text-decoration: none;
+}
+
+/*
+.menus {
+  display: flex;
+  align-items: center;
+  justify-content: left;
+  margin-left: 45px;
+  gap: 30px;
+}
+
+.menus a,
+.menus div a {
+  font-weight: 600;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.menus aside {
+  max-width: 16rem;
+  display: flex;
+  align-items: center;
+  justify-content: left;
+  gap: 0.5rem;
+}
+
+.menus aside p {
+  overflow: hidden;
+}
+
+.menus aside img {
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+}
+
+.menus div {
+  display: flex;
+  gap: 5px;
+}*/
+
+.fa-angle-down {
+  cursor: pointer;
+}
+
+.accountOptions {
+  width: 300px;
+  position: absolute;
+
+  right: 0;
+  top: 4rem;
+  z-index: 1;
+  display: none;
+  background-color: white;
+  border: 1px solid lightgray;
+}
+
+.accountOptions aside {
+  display: flex;
+  flex-direction: column;
+  border-bottom: 1px solid lightgray;
+}
+
+.accountOptions aside a {
+  padding: 1rem;
+  font-weight: 600;
+  color: gray;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.accountOptions aside a:hover {
+  background-color: whitesmoke;
+}
+
+#afterloginhomepage {
+  display: flex;
+  align-items: center;
+  justify-content: left;
+  gap: 0.5rem;
+  max-width: 17rem;
+}
+
+#afterloginhomepage img {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+#afterloginhomepage h4 {
+  overflow: hidden;
+}
+
+#afterloginhomepage i {
+  font-size: 1rem;
+}

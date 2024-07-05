@@ -1,0 +1,125 @@
+.destinations {
+  width: 100%;
+  background-color: whitesmoke;
+  padding-bottom: 6rem;
+}
+
+.destinationOffer {
+  width: 70%;
+  margin: auto;
+  padding: 3rem 0;
+  display: flex;
+  align-items: center;
+  justify-content: left;
+  gap: 1rem;
+}
+
+#DestinationText {
+  margin-right: auto;
+}
+
+.destinationContent img {
+  width: 22rem;
+  height: 13rem;
+  border-top-left-radius: 2.5rem;
+  border-top-right-radius: 2.5rem;
+  border-bottom: 0.5rem solid red;
+}
+
+.destinationContent img:hover {
+  transition: border-bottom 0.3s ease;
+
+  border-bottom: 3rem solid red;
+}
+
+.destinationCarousal {
+  width: 70%;
+  margin: auto;
+  overflow-x: scroll;
+}
+
+.destinationContent {
+  display: inline-block;
+  margin-right: 1.5rem;
+}
+
+.destinationInside {
+  white-space: nowrap;
+}
+
+#left {
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+
+  border: 1px solid gray;
+}
+#right {
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+
+  border: 1px solid gray;
+}
+
+#left i {
+  font-size: 20px;
+}
+
+#right i {
+  font-size: 20px;
+}
+
+.popularCities {
+  width: 70%;
+  margin: auto;
+  padding-top: 3rem;
+}
+
+.cities {
+  margin-top: 1rem;
+}
+
+.cities aside {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  margin: 1rem 1rem 0rem 0rem;
+  background-color: white;
+  border-radius: 1rem;
+}
+
+.cities aside:hover {
+  cursor: pointer;
+  background-color: lightgray;
+}
+
+.cities aside a i {
+  margin-left: 0.5rem;
+}
+
+.Thingstodo {
+  width: 70%;
+  margin: auto;
+  padding-top: 3rem;
+}
+
+.insideThingstodo {
+  margin: 1rem 0rem;
+}
+
+.insideThingstodo aside {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  margin: 1rem 1rem 0rem 0rem;
+  background-color: white;
+  border-radius: 1rem;
+}
+
+.insideThingstodo aside a i {
+  margin-left: 0.5rem;
+}
+
+.insideThingstodo aside:hover {
+  cursor: pointer;
+  background-color: lightgray;
+}

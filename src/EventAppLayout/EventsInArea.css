@@ -1,0 +1,73 @@
+.eventBoxes {
+  width: 100%;
+}
+
+.cardBoxes {
+  width: 70%;
+  margin: auto;
+  border-bottom: 1px solid lightgray;
+}
+
+.card {
+  width: 100%;
+  white-space: nowrap;
+}
+
+.card-bodies {
+  margin: 1rem 2% 1rem 0;
+  min-height: 12rem;
+  width: 30%;
+  display: inline-block;
+  padding: 1%;
+
+  white-space: nowrap;
+  border: 1px solid lightgray;
+  border-radius: 0.5rem;
+}
+
+.card-contents {
+  display: flex;
+  align-items: center;
+  justify-content: left;
+  position: relative;
+  cursor: pointer;
+}
+
+#maskImages {
+  font-size: 5rem;
+  margin-left: 1rem;
+  cursor: pointer;
+}
+
+#showhideimages {
+  width: 55rem;
+  height: 34rem;
+  border-radius: 0.5rem;
+  z-index: 1;
+  position: absolute;
+  left: -10rem;
+}
+
+.card-detailed {
+  width: 16rem;
+  white-space: wrap;
+  display: flex;
+  align-items: baseline;
+  justify-content: left;
+  gap: 0.5rem;
+  flex-direction: column;
+}
+
+.followers {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.card-bodies:hover {
+  box-shadow: 5px 5px 5px lightgray;
+}
+
+#textEvent {
+  margin-left: 15%;
+  margin-top: 3rem;
+}

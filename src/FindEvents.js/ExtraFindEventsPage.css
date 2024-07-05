@@ -1,0 +1,63 @@
+.extraFindEventsPage {
+  width: 100%;
+  position: relative;
+}
+
+.insideExtraFindEventsPage {
+  width: 700px;
+  min-height: 600px;
+  padding-top: 5rem;
+  margin: 0 auto;
+}
+
+.insideExtraFindEventsPage aside {
+  display: flex;
+  align-items: center;
+  justify-content: left;
+  gap: 1rem;
+  margin: 2rem 0;
+}
+
+.insideExtraFindEventsPage aside i {
+  font-size: 2rem;
+  width: 2rem;
+}
+
+.insideExtraFindEventsPage aside input {
+  font-size: 2rem;
+  outline: none;
+  width: fit-content;
+
+  border-bottom: 3px solid lightgray;
+}
+
+.insideExtraFindEventsPage aside button {
+  border-radius: 50%;
+  border: 1px solid black;
+  padding: 0.5rem;
+  background-color: white;
+  cursor: pointer;
+}
+
+.insideExtraFindEventsPage aside button:active {
+  background-color: whitesmoke;
+}
+
+#closeFindExtraEventsPage {
+  position: absolute;
+  right: 1rem;
+  top: 1rem;
+  padding: 0.5rem;
+  border: 1px solid black;
+  background-color: white;
+  border-radius: 0.3rem;
+  cursor: pointer;
+}
+
+#closeFindExtraEventsPage i {
+  font-size: 1.5rem;
+}
+
+#closeFindExtraEventsPage:active {
+  background-color: whitesmoke;
+}

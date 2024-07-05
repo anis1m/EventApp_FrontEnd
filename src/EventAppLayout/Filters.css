@@ -1,0 +1,21 @@
+.Filters ul li hr {
+  height: 2px;
+  background-color: blue;
+  width: 100%;
+  margin-top: 0.5rem;
+}
+.Filters ul {
+  display: flex;
+  align-items: center;
+  justify-content: left;
+  height: 5rem;
+  width: 70%;
+  margin: auto;
+  gap: 2rem;
+  list-style: none;
+}
+
+.Filters ul li {
+  color: gray;
+  cursor: pointer;
+}

@@ -1,0 +1,74 @@
+#tomorrowland img {
+  width: 90rem;
+  height: 45rem;
+}
+
+#tomorrowland {
+  display: inline-block;
+  margin: 0 12%;
+  height: 45rem;
+  position: relative;
+}
+
+#tomorrowland::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 45rem;
+  background: linear-gradient(
+    0deg,
+    rgba(57, 27, 27, 1),
+    rgba(48, 27, 27, 0.3),
+    rgba(0, 0, 0, 0)
+  );
+}
+
+.insideCreateEvent {
+  height: 49rem;
+  background: linear-gradient(0deg, black 35rem, white 14rem);
+  color: white;
+  position: relative;
+}
+
+.createEvent {
+  height: 100%;
+  width: 100%;
+}
+
+#eventorganizing p a {
+  color: white;
+  text-decoration-color: orange;
+  text-decoration-thickness: 3px;
+}
+
+#eventorganizing button {
+  padding: 1rem 4rem;
+  background-color: red;
+  color: white;
+  font-size: 15px;
+  font-weight: 600;
+  border-radius: 0.5rem;
+  cursor: pointer;
+}
+
+#eventorganizing {
+  position: absolute;
+
+  bottom: 0;
+  left: 0;
+  right: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  flex-direction: column;
+  padding: 1rem;
+}
+
+#organizersGrow {
+  font-size: 3rem;
+  font-weight: 1000;
+}
