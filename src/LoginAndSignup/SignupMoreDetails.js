@@ -27,14 +27,14 @@ function SignupMoreDetails() {
         toast.success(
           "Verified Successfully. Now You Can Login. Redirecting in 5 Seconds",
           {
-            position: "top-center",
+            position: "bottom-center",
           }
         );
-        setTimeout(() => navigateToLogin("/login"), 5000);
+        setTimeout(() => navigateToLogin("/login/inside-login"), 5000);
       })
       .catch((error) => {
         toast.error("Otp Verification Failed. Try again", {
-          position: "top-center",
+          position: "bottom-center",
         });
       });
   }

@@ -1,0 +1,148 @@
+.eventsCarousal {
+  width: 100%;
+  height: fit-content;
+
+  position: relative;
+  background-color: whitesmoke;
+  padding: 1rem 0 0.5rem 0;
+  margin-top: 1rem;
+}
+
+.insideEventCarousalParent {
+  width: 83%;
+
+  margin: 2rem 0 2rem 15%;
+  overflow-x: hidden;
+}
+
+.insideEventsCarousal {
+  width: 100%;
+
+  white-space: nowrap;
+}
+
+#eventsCarousalSideMenu {
+  position: absolute;
+  left: 0;
+  padding-left: 1rem;
+  margin-top: 2rem;
+}
+
+#eventsCarousalSideMenu h1 {
+  font-size: 2rem;
+}
+
+#eventsCarousalSideMenu p {
+  color: gray;
+  font-size: 1.3rem;
+  font-weight: 600;
+  margin-top: 0.5rem;
+}
+
+#eventsCarousalSideMenu blockquote {
+  margin-top: 5rem;
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+#eventsCarousalSideMenu blockquote p {
+  color: black;
+}
+
+#eventsCarousalSideMenu blockquote button {
+  padding: 1rem;
+  border-radius: 50%;
+  background-color: purple;
+  cursor: pointer;
+}
+
+#eventsCarousalSideMenu blockquote button i {
+  font-size: 1.5rem;
+  color: white;
+}
+
+#eventsCarousalChevronRight {
+  position: absolute;
+  right: 2%;
+  top: 6rem;
+  padding: 2rem 1rem 2rem 0.5rem;
+  background-color: gray;
+  border-top-left-radius: 3rem;
+  border-bottom-left-radius: 3rem;
+  opacity: 0.8;
+  z-index: 1;
+  cursor: pointer;
+}
+
+#eventsCarousalChevronRight i {
+  font-size: 2rem;
+  color: white;
+}
+
+#eventsCarousalChevronLeft {
+  position: absolute;
+  left: 15%;
+  top: 6rem;
+  padding: 2rem 1rem 2rem 0.5rem;
+  background-color: gray;
+  border-top-right-radius: 3rem;
+  border-bottom-right-radius: 3rem;
+  opacity: 0.8;
+  z-index: 1;
+  cursor: pointer;
+}
+
+#eventsCarousalChevronLeft i {
+  font-size: 2rem;
+  color: white;
+}
+
+.more-card-bodyCarousal {
+  width: 30rem;
+  height: 12.2rem;
+  display: inline-block;
+  margin-right: 4rem;
+  vertical-align: top;
+  margin-bottom: 1rem;
+  white-space: wrap;
+  padding: 1rem 1.5rem;
+  background: url(../../public/images_/Untitled_design__7_-removebg-preview.png);
+  background-size: cover;
+}
+
+.more-card-detailsCarousal {
+  display: flex;
+  align-items: center;
+  justify-content: left;
+  gap: 1.5rem;
+  width: 100%;
+}
+
+.more-card-detailsCarousal aside {
+  flex-basis: 75%;
+  display: flex;
+  align-items: start;
+  gap: 1rem;
+  flex-direction: column;
+}
+
+.more-card-detailsCarousal figure {
+  flex-basis: 25%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding-left: 2rem;
+}
+
+.more-card-detailsCarousal figure i {
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+.more-card-detailsCarousal figure blockquote {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}

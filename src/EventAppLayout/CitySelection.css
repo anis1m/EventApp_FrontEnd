@@ -1,0 +1,76 @@
+.citySelection {
+  width: 100%;
+  min-height: 300px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  background-color: white;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid lightgray;
+}
+
+:host {
+  position: relative;
+}
+
+.insideCitySelection {
+  width: 70%;
+  margin: auto;
+}
+
+.insideCitySelectionLogo {
+  border-bottom: 2px solid gray;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.5rem 15%;
+}
+
+.insideCitySelectionLogo img {
+  width: 120px;
+  height: 70px;
+  cursor: pointer;
+}
+
+.insideCitySelectionLogo i {
+  font-size: 4rem;
+  cursor: pointer;
+}
+
+.insideCitySelection aside {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  margin: 1rem 0;
+  flex-direction: column;
+}
+
+.insideCitySelection aside blockquote {
+  border: 1px solid lightgray;
+  padding-right: 1rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 0 0.5rem lightgray;
+}
+
+.insideCitySelection aside blockquote input {
+  padding: 1rem;
+  font-size: 1rem;
+  outline: none;
+  border-radius: 0.5rem;
+  width: 40rem;
+}
+
+.insideCitySelection aside blockquote input::placeholder {
+  font-weight: 600;
+  color: gray;
+}
+
+.insideCitySelectionList {
+  width: 80%;
+  margin: 1rem auto;
+  height: 400px;
+  overflow-y: scroll;
+  border-top: 1px solid lightgray;
+}

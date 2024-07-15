@@ -1,0 +1,10 @@
+.bookEvent {
+  width: 100%;
+}
+
+.bookEventInside {
+  width: 50%;
+  margin: 5rem auto;
+  border: 1px solid lightgray;
+  border-radius: 1rem;
+}

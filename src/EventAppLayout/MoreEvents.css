@@ -1,48 +1,43 @@
 .moreeventBoxes {
   width: 100%;
-  margin-bottom: 10rem;
 }
 
 #moretextEvent {
-  margin: 1rem 0 1rem 15%;
+  margin: 2rem 0 2rem 15%;
+  font-size: 2rem;
 }
 
 .morecardBoxes {
-  width: 70%;
-  margin: auto;
+  width: 85%;
+  margin: 2rem auto;
+}
+
+#showhideimage {
+  width: 100%;
+  height: 250px;
+  margin-bottom: 1rem;
+  cursor: pointer;
 }
 
 .more-card-body {
-  width: 20rem;
-  min-height: 16rem;
-  background-color: transparent;
-  border: 2px solid grey;
-  box-shadow: 0px 0px 10px grey;
-  padding: 1rem;
-  border-radius: 1rem;
+  width: 30rem;
+  height: 12.2rem;
   display: inline-block;
-  margin-right: 0.8rem;
+  margin-right: 3rem;
   vertical-align: top;
   margin-bottom: 1rem;
+  white-space: wrap;
+  padding: 1rem 1.5rem;
+  background: url(../../public/images_/Untitled_design__7_-removebg-preview.png);
+  background-size: cover;
 }
 
 .more-card-details {
   display: flex;
-  align-items: baseline;
-  gap: 1rem;
-  flex-direction: column;
+  align-items: center;
+  justify-content: left;
+  gap: 1.5rem;
   width: 100%;
-}
-
-.more-card-details figure {
-  width: 100%;
-  text-align: end;
-}
-
-.more-card-details figure i {
-  font-size: 1.5rem;
-  margin-left: 1rem;
-  cursor: pointer;
 }
 
 .more-card-details p {
@@ -50,112 +45,65 @@
 }
 
 .more-card-details aside {
+  flex-basis: 75%;
   display: flex;
   align-items: start;
-  justify-content: space-between;
+  gap: 1rem;
+  flex-direction: column;
+}
+
+.more-card-details figure {
+  flex-basis: 25%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding-left: 2rem;
+}
+
+.more-card-details figure i {
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+.more-card-details figure blockquote {
+  display: flex;
+  align-items: center;
   gap: 1rem;
 }
 
-.more-card-details aside blockquote {
-  display: flex;
-  align-items: start;
-  justify-content: left;
-  gap: 0.5rem;
-}
-
-.more-card-details article h4 {
-  display: inline-block;
-}
-
-/*
-.more-card-body {
-  margin: 1rem 2% 1rem 0;
-  min-height: 12rem;
-  width: 30%;
-  display: inline-block;
-  padding: 1%;
-
-  white-space: nowrap;
-  border: 1px solid lightgray;
-  border-radius: 0.5rem;
-}
-
-.more-card-content {
+#locationinblockquote {
   display: flex;
   align-items: center;
   justify-content: left;
-  position: relative;
-}
-
-#maskImage {
-  font-size: 5rem;
-  margin-left: 1rem;
-  cursor: pointer;
-}
-
-#showhideimage {
-  width: 55rem;
-  height: 34rem;
-  border-radius: 0.5rem;
-  z-index: 1;
-  position: absolute;
-  left: -10rem;
-}
-
-.more-card-details {
-  width: 16rem;
-  white-space: wrap;
-  display: flex;
-  align-items: baseline;
-  justify-content: left;
   gap: 0.5rem;
-  flex-direction: column;
-  cursor: pointer;
-}
-
-.more-followers {
-  display: flex;
-  gap: 0.5rem;
-}
-
-.more-card-body:hover {
-  box-shadow: 5px 5px 5px lightgray;
-}
-
-#moretextEvent {
-  margin-left: 15%;
-  margin-top: 3rem;
-}
-
-#seeMore {
-  padding: 0.8rem 10rem;
-  border: 1px solid gray;
-  color: gray;
-  text-align: center;
-  border-radius: 0.3rem;
-  background-color: white;
-  margin-left: 40%;
-}
-
-#seeMore:hover {
-  background-color: whitesmoke;
-  cursor: pointer;
-}
-
-#hovertoseefulldescription {
-  position: absolute;
-  left: 5rem;
-  top: 7.2rem;
-  width: 30rem;
-  padding: 0.5rem 1rem;
-  border: 1px solid lightgray;
-  z-index: 1;
-  border-radius: 0.8rem;
-  background-color: white;
   display: none;
 }
 
-.more-card-details blockquote {
+#seeMore {
+  width: 70%;
+  margin: 1rem auto;
   display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  height: fit-content;
 }
-*/
+
+#seeMore button {
+  width: 40px;
+  height: 40px;
+  font-size: 1rem;
+  border: 2px solid gray;
+  border-radius: 50%;
+  color: gray;
+  font-weight: 600;
+  background-color: white;
+  text-align: center;
+}
+
+#seeMore button:hover {
+  transform: scale(1.3);
+  cursor: pointer;
+  background-color: whitesmoke;
+  color: black;
+}

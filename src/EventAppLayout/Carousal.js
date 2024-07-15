@@ -5,6 +5,7 @@ import i2 from "./carousalImages/i2.jpg";
 import i3 from "./carousalImages/i3.png";
 import i4 from "./carousalImages/i4.jpg";
 import i5 from "./carousalImages/i5.png";
+import i6 from "./carousalImages/i8.jpg";
 
 function Carousal() {
   const slider = useRef();
@@ -52,19 +53,22 @@ function Carousal() {
       <div className="slider" ref={w}>
         <div className="carousalImages" ref={slider}>
           <figure>
-            <img src={i1}></img>
+            <img src={i1} />
           </figure>
           <figure>
-            <img src={i2}></img>
+            <img src={i2} />
           </figure>
           <figure>
-            <img src={i3}></img>
+            <img src={i3} />
           </figure>
           <figure>
-            <img src={i4}></img>
+            <img src={i4} />
           </figure>
           <figure>
-            <img src={i5}></img>
+            <img src={i5} />
+          </figure>
+          <figure>
+            <img src={i6} />
           </figure>
         </div>
       </div>

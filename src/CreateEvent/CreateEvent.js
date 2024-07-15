@@ -24,7 +24,7 @@ function CreateEvent() {
               The all-in-one ticketing and discovery platform trusted by
               millions of organizers and attendees worldwide
             </h1>
-            <Link to={"/event-register"} style={{ textDecoration: "none" }}>
+            <Link to={"/event-create"} style={{ textDecoration: "none" }}>
               <button>Get Started For Free</button>
             </Link>
           </aside>

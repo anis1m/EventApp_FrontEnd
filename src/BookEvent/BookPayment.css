@@ -1,0 +1,96 @@
+.bookPayment {
+  width: 100%;
+  padding: 3rem 2rem;
+}
+
+.bookPayment {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  flex-direction: column;
+}
+
+.bookPayment div {
+  width: 90%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 0 auto;
+}
+
+.bookPayment div blockquote {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.bookPayment div blockquote i {
+  font-size: 2rem;
+}
+
+.bookPayment div blockquote h1 {
+  font-size: 2rem;
+}
+
+.bookPayment div aside {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.bookPayment div aside mark {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  background-color: white;
+  padding: 0.5rem 1rem;
+  border: 1px solid gray;
+}
+
+.bookPayment div aside mark i {
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+.bookPayment div aside mark h1 {
+  font-size: 2rem;
+}
+
+.bookPayment hr {
+  height: 2px;
+  background-color: black;
+  width: 100%;
+}
+
+.bookPayment figure {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.bookPayment figure blockquote {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.bookPayment figure blockquote i {
+  font-size: 2rem;
+}
+
+.bookPayment figure h1 {
+  font-size: 2rem;
+}
+
+.bookPayment button {
+  padding: 1rem;
+  width: 300px;
+  background-color: whitesmoke;
+  font-size: 1.5rem;
+  border-radius: 2rem;
+  font-weight: 600;
+  margin-top: 2rem;
+  cursor: pointer;
+}

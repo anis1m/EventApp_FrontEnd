@@ -2,6 +2,20 @@ import React, { useEffect, useRef, useState } from "react";
 import "./FindParticularEvents.css";
 import Navbar from "../EventAppLayout/Navbar";
 import { useNavigate, useParams } from "react-router-dom";
+import { InfinitySpin } from "react-loader-spinner";
+import noimage from "../EventAppLayout/carousalImages/noImage.jpg";
+import { MapContainer, Popup, Marker, TileLayer } from "react-leaflet";
+import "leaflet/dist/leaflet.css";
+import L from "leaflet";
+import axios from "axios";
+
+delete L.Icon.Default.prototype._getIconUrl;
+L.Icon.Default.mergeOptions({
+  iconRetinaUrl:
+    "https://unpkg.com/leaflet@1.7.1/dist/images/marker-icon-2x.png",
+  iconUrl: "https://unpkg.com/leaflet@1.7.1/dist/images/marker-icon.png",
+  shadowUrl: "https://unpkg.com/leaflet@1.7.1/dist/images/marker-shadow.png",
+});
 
 function FindParticularEvents() {
   const { location, keyword } = useParams();
@@ -10,9 +24,51 @@ function FindParticularEvents() {
   const seeMoreLess = useRef();
   const [detailsCard, setDetailsCard] = useState([]);
   const navigateToSeeMore = useNavigate();
+  const [loading, setLoading] = useState(false);
+  let [longitude, setLongitude] = useState(0.0);
+  let [latitude, setLatitude] = useState(0.0);
+
+  useEffect(() => {
+    handleLocationFetch();
+  }, []);
+
+  function handleLocationFetch() {
+    if ("geolocation" in navigator) {
+      navigator.geolocation.getCurrentPosition(
+        (position) => {
+          const lat = position.coords.latitude;
+          const lon = position.coords.longitude;
+          setLatitude(lat);
+          setLongitude(lon);
+
+          getLocationbyCoords(lat, lon);
+        },
+
+        (error) => {
+          console.error("Error fetching location:", error);
+        },
+        { enableHighAccuracy: true, timeout: 10000, maximumAge: 0 }
+      );
+    } else {
+      console.error("Geolocation is not available in this browser.");
+    }
+  }
+  function getLocationbyCoords(lati, longi) {
+    const url = `https://api.opencagedata.com/geocode/v1/json?q=${lati}%2C${longi}&key=eb88828eefe7485a9547b3fa0da61537`;
+
+    axios
+      .get(url)
+      .then((response) => {
+        console.log(response.data);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  }
 
   const url = `http://127.0.0.1:3500/api/v3/event/getEvent/${location}/${keyword}`;
   useEffect(() => {
+    setLoading(true);
     fetch(url)
       .then((response) => {
         const d = response.json();
@@ -20,11 +76,13 @@ function FindParticularEvents() {
       })
       .then((data) => {
         setDetailsCard(data.data);
+        setLoading(false);
       })
       .catch((error) => {
         console.log(error);
       });
   }, [url]);
+
   return (
     <>
       <section className="findParticularEvents">
@@ -191,16 +249,17 @@ function FindParticularEvents() {
                 </ul>
               </div>
               <div className="RightPartofInsideFindParticularEvents">
-                {detailsCard.length === 0 ? (
-                  <p
-                    style={{
-                      margin: "19rem 22rem",
-                      fontSize: "1.5rem",
-                      fontWeight: 600,
-                    }}
-                  >
-                    Nothing to Show
-                  </p>
+                {loading ? (
+                  <aside style={{ margin: "15rem 40%" }}>
+                    <InfinitySpin
+                      visible={true}
+                      width="200"
+                      color="purple"
+                      ariaLabel="infinity-spin-loading"
+                    />
+                  </aside>
+                ) : detailsCard.length === 0 ? (
+                  <h2 style={{ margin: "15rem 40%" }}>Nothing Here</h2>
                 ) : (
                   detailsCard.map((databox, index) => (
                     <div style={{ position: "relative" }}>
@@ -209,13 +268,15 @@ function FindParticularEvents() {
                         key={index}
                       >
                         <img
-                          src={databox.imageurl}
+                          src={
+                            databox.imageurl === "" ? noimage : databox.imageurl
+                          }
                           onClick={() =>
                             navigateToSeeMore(`/event-interface/${databox._id}`)
                           }
                         />
                         <aside>
-                          <h2
+                          <h3
                             onClick={() =>
                               navigateToSeeMore(
                                 `/event-interface/${databox._id}`
@@ -224,7 +285,7 @@ function FindParticularEvents() {
                             style={{ cursor: "pointer" }}
                           >
                             {databox.title}
-                          </h2>
+                          </h3>
                           <p>{databox.dateandtime}</p>
                           <p>{databox.hostebylocation}</p>
                           <p>{databox.ticketPrice}</p>
@@ -240,7 +301,23 @@ function FindParticularEvents() {
               </div>
             </div>
           </div>
-          <div className="rightPartofFindParticularEvents"></div>
+          <div className="rightPartofFindParticularEvents">
+            <MapContainer
+              center={[latitude, longitude]}
+              zoom={8}
+              style={{ width: "inherit", height: "100%" }}
+              key={`${latitude}-${longitude}`}
+            >
+              <TileLayer
+                url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+                attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+              />
+
+              <Marker position={[latitude, longitude]}>
+                <Popup>Hello</Popup>
+              </Marker>
+            </MapContainer>
+          </div>
         </section>
       </section>
     </>

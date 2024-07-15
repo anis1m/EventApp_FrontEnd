@@ -1,0 +1,17 @@
+.cityNames {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  column-gap: 1rem;
+  padding: 1rem;
+}
+
+.cityNames li {
+  cursor: pointer;
+  padding: 0.5rem 0 0.5rem 0;
+}
+
+.cityNames li:hover {
+  text-decoration: underline;
+  background-color: whitesmoke;
+}

@@ -23,6 +23,25 @@
   padding: 20px;
 }
 
+#errorPassword {
+  width: 100%;
+  margin: 0.5rem 0;
+  display: none;
+}
+
+#errorPassword dl dd {
+  display: flex;
+  align-items: center;
+  justify-content: left;
+  gap: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+#errorPassword dl dd i {
+  color: red;
+  font-size: 1.2rem;
+}
+
 .insideSignup form {
   width: 100%;
 }
@@ -114,7 +133,7 @@
 }
 
 #profilepicuploadinsideSignup img {
-  width: 80px;
+  width: 100px;
   height: 80px;
   border-radius: 0.5rem;
 }

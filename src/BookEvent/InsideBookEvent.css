@@ -1,0 +1,51 @@
+.insideBookEvent {
+  width: 100%;
+  padding: 1.5rem 2.5rem;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.insideBookEvent div {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.insideBookEvent div button {
+  padding: 0.5rem 1.5rem;
+  border: 1px solid lightgray;
+  border-radius: 1rem;
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+.insideBookEvent blockquote {
+  margin: 2rem 0;
+}
+
+.insideBookEvent blockquote button {
+  padding: 0.5rem 4.5rem;
+  background-color: orange;
+  transform: skewX(40deg);
+  margin-left: 5rem;
+}
+
+.insideBookEvent blockquote button h3 {
+  transform: skewX(-40deg);
+  font-size: 1.2rem;
+}
+
+#bookPaymentButton {
+  padding: 0.5rem 5rem;
+  background-color: purple;
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: white;
+  margin-top: 4rem;
+}
+
+.insideBookEvent h1 {
+  font-size: 2rem;
+}

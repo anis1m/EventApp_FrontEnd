@@ -164,7 +164,7 @@ function Step2() {
               </p>
               <h3>How much do you want to charge for tickets?</h3>
               <aside id="step2ticketprice" ref={step2ticketprice}>
-                <i class="fa-solid fa-dollar-sign"></i>
+                <i class="fa-solid fa-indian-rupee-sign"></i>
                 <input type="number" placeholder="0.00" ref={disabledenabled} />
               </aside>
               <aside id="step2freetickets">

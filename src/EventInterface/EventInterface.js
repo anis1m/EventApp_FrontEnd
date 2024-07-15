@@ -1,12 +1,13 @@
 import React, { useEffect, useRef, useState } from "react";
 import "./EventInterface.css";
-import { useLocation, useParams } from "react-router-dom";
+import { useLocation, useNavigate, useParams } from "react-router-dom";
 import axios from "axios";
 import Navbar from "../EventAppLayout/Navbar";
 import { MapContainer, Popup, Marker, TileLayer } from "react-leaflet";
 import "leaflet/dist/leaflet.css";
 import L from "leaflet";
 import RoutingMachine from "./RoutingMachine";
+import noimage from "../EventAppLayout/carousalImages/noImage.jpg";
 
 delete L.Icon.Default.prototype._getIconUrl;
 L.Icon.Default.mergeOptions({
@@ -118,6 +119,8 @@ function EventInterface() {
       });
   }, []);
 
+  const navigateToBookEvent = useNavigate();
+
   const start = { lat: latitude, lng: longitude };
   const end = { lat: destinationlatitude, lng: destinationlongitude };
   console.log(start, end);
@@ -136,44 +139,52 @@ function EventInterface() {
         <Navbar />
 
         <section className="insideEventInterface">
-          <img src={fetched.imageurl} alt="Image" />
+          <img
+            src={fetched.imageurl}
+            alt="Image"
+            id="insideEventInterfaceImage"
+          />
           <div className="likeandshareEvent">
-            <h1>{fetched.title}</h1>
             <aside>
-              <i class="fa-regular fa-heart"></i>
-              <i class="fa-solid fa-upload"></i>
+              <h1>{fetched.title}</h1>
+              <blockquote>
+                <h4>{fetched.category}</h4>
+                <h4>|</h4>
+                <h4>Hindi, English</h4>
+                <h4>|</h4>
+                <h4>2yrs+</h4>
+                <h4>|</h4>
+                <h4>45mins</h4>
+              </blockquote>
+              <h4>venue: date/day/time pune</h4>
+            </aside>
+            <aside>
+              <figure>
+                <i class="fa-regular fa-heart"></i>
+                <i class="fa-solid fa-upload"></i>
+              </figure>
+              <h3>Starting At Rs {fetched.ticketprice}</h3>
+              <button
+                onClick={() =>
+                  navigateToBookEvent(
+                    `/book-event/insideBookEvent?price=${fetched.ticketprice}`
+                  )
+                }
+              >
+                Book
+              </button>
             </aside>
           </div>
           <div className="insideEventInterfaceDetails">
-            <article>
+            <article className="leftsideInsideEventInterfaceDetails">
               <aside>
-                <h3>{fetched.hostdetails}</h3>
+                <h3>Venue</h3>
+                <h4>{fetched.dateandtime}</h4>
+                <h3>Map</h3>
               </aside>
-              <aside>
-                <h2>Date and Time</h2>
-                <p>{fetched.dateandtime}</p>
-              </aside>
-              <aside>
-                <h2>Location</h2>
-                <p>Nagpur</p>
-              </aside>
-              <aside>
-                <h2>How to Reach</h2>
-                <p>{fetched.howToReach}</p>
-              </aside>
-              <aside>
-                <h2>Current Location</h2>
-                <div id="clicktoknowlocationandDistance">
-                  <p ref={CurrentLocation}>Fetch Current Location </p>
-                  <button onClick={handleLocationFetch}>Click Here</button>
-                </div>
-                <div id="clicktoknowlocationandDistance">
-                  <p ref={CurrentDistance}>Calculate Distance</p>
-                  <button onClick={handleCalculateRoute}>Click Here</button>
-                </div>
-              </aside>
+
               <div
-                style={{ width: "100%", height: "400px" }}
+                style={{ width: "100%", height: "300px" }}
                 ref={mapDetails}
                 id="mapDetailsCutout"
               >
@@ -200,47 +211,56 @@ function EventInterface() {
                   />
                 </MapContainer>
               </div>
-
               <aside>
-                <h2>Department</h2>
-                <p>{fetched.hostedbydepartment}</p>
+                <h2>Time to Reach</h2>
+                <p>Approx 1 day</p>
               </aside>
+              <figure>
+                <i class="fa-solid fa-home"></i>
+                <p ref={CurrentDistance}>Distance</p>
+                <i class="fa-solid fa-location-dot"></i>
+                <button onClick={() => setCalculateRoute(true)}>
+                  Calculate
+                </button>
+              </figure>
               <aside>
-                <h2>Description</h2>
-                <p>{fetched.description}</p>
-              </aside>
-              <aside>
-                <h2>Contact Organizer</h2>
-                <blockquote id="eventInterfaceContact">
-                  <i class="fa-solid fa-envelope"></i>
-                  <p>{fetched.OrganizerContact}</p>
-                </blockquote>
+                <h4>Instructions and warnings</h4>
               </aside>
             </article>
-            <div className="bookTicketBlock">
-              <div className="insideBookTicketBook">
-                <h1>{fetched.title}</h1>
-                <aside>
-                  <button
-                    onClick={() => {
-                      if (count <= 1) {
-                        setCount(1);
-                      } else {
-                        setCount(count - 1);
-                      }
-                    }}
-                  >
-                    <i class="fa-solid fa-minus"></i>
-                  </button>
-                  <h3>{count}</h3>
-                  <button onClick={() => setCount(count + 1)}>
-                    <i class="fa-solid fa-plus"></i>
-                  </button>
-                </aside>
-              </div>
-              <button>Check out for {fetched.ticketprice}</button>
-            </div>
+            <article className="middlesideInsideEventInterfaceDetails">
+              <h2>About Event</h2>
+              <aside>
+                <h3>Description</h3>
+                <p>{fetched.description}</p>
+              </aside>
+              <blockquote>
+                <p>terms and conditions for tickets</p>
+                <h4>read more</h4>
+              </blockquote>
+            </article>
+            <article className="rightsideInsideEventInterfaceDetails">
+              <h3>Organizer</h3>
+              <blockquote>
+                <h4>{fetched.hostdetails}</h4>
+                <h4>Event dtl org name</h4>
+              </blockquote>
+              <figure>
+                <i class="fa-brands fa-facebook"></i>
+                <i class="fa-brands fa-x-twitter"></i>
+                <i class="fa-brands fa-linkedin"></i>
+                <i class="fa-brands fa-instagram"></i>
+                <i class="fa-brands fa-youtube"></i>
+              </figure>
+              <aside>
+                <h4>Celebrity for host</h4>
+                <img src={noimage} />
+                <p>Info about Celebrity</p>
+              </aside>
+            </article>
           </div>
+        </section>
+        <section className="outsideEventInterface">
+          <h2>You may also like this event</h2>
         </section>
       </section>
     </>

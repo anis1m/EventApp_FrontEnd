@@ -4,17 +4,18 @@ import "./AccountInfo.css";
 import AccountEdit from "./AccountEdit";
 
 function AccountInfo() {
-  const [email, setEmail] = useState("");
+  const [userData, setUserData] = useState({});
 
   useEffect(() => {
     if (sessionStorage.getItem("user") != null) {
-      setEmail(JSON.parse(sessionStorage.getItem("user")));
+      setUserData(JSON.parse(sessionStorage.getItem("user")));
+      console.log(userData);
     }
   }, []);
   return (
     <>
       <section className="accountinfo">
-        <AccountNavigation email={email} />
+        <AccountNavigation email={userData.email} />
         <AccountEdit />
       </section>
     </>

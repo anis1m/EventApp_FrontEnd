@@ -33,7 +33,7 @@ function AccountNavigation({ email }) {
           }}
         >
           <img src="/images_/empty.jpg" />
-          <p>{email.email}</p>
+          <p>{email}</p>
           <i
             class="fa-solid fa-angle-down"
             onClick={() => {

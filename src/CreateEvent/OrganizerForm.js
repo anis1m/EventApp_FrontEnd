@@ -1,8 +1,10 @@
 import React from "react";
 import Navbar from "../EventAppLayout/Navbar";
 import "./OrganizerForm.css";
+import { Link, useNavigate } from "react-router-dom";
 
 function OrganizerForm() {
+  const navigateToCreateEvent = useNavigate();
   return (
     <>
       <section className="organizerForm">
@@ -28,6 +30,7 @@ function OrganizerForm() {
             <div>
               <input type="text" placeholder="Name" />
               <input type="email" placeholder="email@domain.com" />
+              <input type="number" placeholder="Enter Otp You Received" />
               <input type="text" placeholder="Address" />
               <input type="number" placeholder="Phone Number" />
               <input type="text" placeholder="Pan Number" />
@@ -41,7 +44,14 @@ function OrganizerForm() {
               </figure>
 
               <input type="url" placeholder="Social Media Links" />
-              <button type="submit">Signup with Email</button>
+
+              <button
+                type="submit"
+                onClick={() => navigateToCreateEvent("/event-create")}
+              >
+                Continue
+              </button>
+
               <p>
                 By clicking continue, you agree to our{" "}
                 <strong>Terms of Service</strong> and{" "}

@@ -1,4 +1,4 @@
-import React, { useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import "./SignUp.css";
 import { Link, Outlet, useNavigate } from "react-router-dom";
 import axios from "axios";
@@ -7,6 +7,7 @@ import logo from "../EventAppLayout/carousalImages/Image 328.png";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import Navbar from "../EventAppLayout/Navbar";
+import noimage from "../EventAppLayout/carousalImages/noImage.jpg";
 
 function SignUp() {
   const url = "http://127.0.0.1:3500/api/v3/account/newAccount";
@@ -19,11 +20,17 @@ function SignUp() {
   const [password, setPassword] = useState();
   const [confirmPassword, setconfirmPassword] = useState();
   const [errorMessage, setErrorMessage] = useState();
+  const [fileinfo, setFileInfo] = useState();
   const signupButton = useRef();
   const showmoreInputs = useRef();
   const emailhidden = useRef();
   const orLinehidden = useRef();
   const phonenumberhidden = useRef();
+  const errorPassword = useRef();
+  const validatePassword = useRef([]);
+  const errorPasswordMessage = useRef();
+  const [previewUrl, setPreviewUrl] = useState(false);
+  const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[\W_]).{8,}$/;
 
   function postdata() {
     fetch(url, {
@@ -42,7 +49,7 @@ function SignUp() {
       .then(() => {
         toast.warning(
           "Otp has been sent to your email address. Enter it to verify Your Account",
-          { position: "top-center" }
+          { position: "bottom-center" }
         );
       })
       .catch((error) => {
@@ -50,12 +57,25 @@ function SignUp() {
       });
   }
 
+  useEffect(() => {
+    console.log(fileinfo);
+  }, [fileinfo]);
+
   function redirect(e) {
     e.preventDefault();
-    redirectnavigate("otp-verification?email=" + email);
-    redirectnext.current.style.display = "none";
-    postdata();
+    if (!passwordRegex.test(password)) {
+      if (errorPasswordMessage.current) {
+        errorPasswordMessage.current.style.display = "block";
+        errorPasswordMessage.current.innerHTML =
+          "Please fulfil all conditions of creating password";
+      }
+    } else {
+      redirectnavigate("otp-verification?email=" + email);
+      redirectnext.current.style.display = "none";
+      postdata();
+    }
   }
+
   return (
     <>
       <section className="signup">
@@ -86,6 +106,14 @@ function SignUp() {
                     orLinehidden.current.style.display = "none";
                     phonenumberhidden.current.style.display = "none";
                   }
+                  if (e.key === "Tab") {
+                    errorPassword.current.style.display = "none";
+                    errorPasswordMessage.current.style.display = "none";
+                  }
+                }}
+                onClick={() => {
+                  errorPassword.current.style.display = "none";
+                  errorPasswordMessage.current.style.display = "none";
                 }}
               />
             </aside>
@@ -105,8 +133,16 @@ function SignUp() {
                     orLinehidden.current.style.display = "none";
                     emailhidden.current.style.display = "none";
                   }
+                  if (e.key === "Tab") {
+                    errorPassword.current.style.display = "none";
+                    errorPasswordMessage.current.style.display = "none";
+                  }
                 }}
                 onChange={(e) => setPhoneNumber(e.target.value)}
+                onClick={() => {
+                  errorPassword.current.style.display = "none";
+                  errorPasswordMessage.current.style.display = "none";
+                }}
               />
             </aside>
             <aside style={{ display: "none" }} ref={showmoreInputs}>
@@ -115,10 +151,25 @@ function SignUp() {
                   <label>Upload Image</label>
                   <figure>
                     <i class="fa-solid fa-upload"></i>
-                    <input type="file" />
+                    <input
+                      type="file"
+                      onClick={() => {
+                        errorPassword.current.style.display = "none";
+                        errorPasswordMessage.current.style.display = "none";
+                      }}
+                      onChange={(e) => {
+                        setFileInfo(e.target.files[0]);
+                        setPreviewUrl(true);
+                      }}
+                    />
                   </figure>
                 </div>
-                <img src="images_/empty.jpg" />
+                {previewUrl ? (
+                  <img src={URL.createObjectURL(fileinfo)} />
+                ) : (
+                  <img src={noimage} />
+                )}
+
                 <aside>
                   <h3>Crop</h3>
                   <i class="fa-solid fa-scissors"></i>
@@ -132,6 +183,16 @@ function SignUp() {
                   id="moresignupinputs"
                   required
                   onChange={(e) => setName(e.target.value)}
+                  onClick={() => {
+                    errorPassword.current.style.display = "none";
+                    errorPasswordMessage.current.style.display = "none";
+                  }}
+                  onKeyDown={(e) => {
+                    if (e.key === "Tab") {
+                      errorPassword.current.style.display = "none";
+                      errorPasswordMessage.current.style.display = "none";
+                    }
+                  }}
                 />
               </aside>
               <aside>
@@ -142,6 +203,16 @@ function SignUp() {
                   id="moresignupinputs"
                   required
                   onChange={(e) => setLastName(e.target.value)}
+                  onClick={() => {
+                    errorPassword.current.style.display = "none";
+                    errorPasswordMessage.current.style.display = "none";
+                  }}
+                  onKeyDown={(e) => {
+                    if (e.key === "Tab") {
+                      errorPassword.current.style.display = "block";
+                      errorPasswordMessage.current.style.display = "none";
+                    }
+                  }}
                 />
               </aside>
               <aside>
@@ -151,8 +222,116 @@ function SignUp() {
                   placeholder="Password"
                   id="moresignupinputs"
                   required
-                  onChange={(e) => setPassword(e.target.value)}
+                  onChange={(e) => {
+                    const value = e.target.value;
+                    setPassword(value);
+
+                    if (/.{8,}/.test(value)) {
+                      validatePassword.current[0].classList.remove("fa-xmark");
+                      validatePassword.current[0].classList.add("fa-check");
+                      validatePassword.current[0].style.color = "green";
+                    } else {
+                      validatePassword.current[0].classList.remove("fa-check");
+                      validatePassword.current[0].classList.add("fa-xmark");
+                      validatePassword.current[0].style.color = "red";
+                    }
+
+                    if (/[A-Z]/.test(value)) {
+                      validatePassword.current[1].classList.remove("fa-xmark");
+                      validatePassword.current[1].classList.add("fa-check");
+                      validatePassword.current[1].style.color = "green";
+                    } else {
+                      validatePassword.current[1].classList.remove("fa-check");
+                      validatePassword.current[1].classList.add("fa-xmark");
+                      validatePassword.current[1].style.color = "red";
+                    }
+
+                    if (/[a-z]/.test(value)) {
+                      validatePassword.current[2].classList.remove("fa-xmark");
+                      validatePassword.current[2].classList.add("fa-check");
+                      validatePassword.current[2].style.color = "green";
+                    } else {
+                      validatePassword.current[2].classList.remove("fa-check");
+                      validatePassword.current[2].classList.add("fa-xmark");
+                      validatePassword.current[2].style.color = "red";
+                    }
+
+                    if (/[!@#$%^&*(),.?":{}|<>]/.test(value)) {
+                      validatePassword.current[3].classList.remove("fa-xmark");
+                      validatePassword.current[3].classList.add("fa-check");
+                      validatePassword.current[3].style.color = "green";
+                    } else {
+                      validatePassword.current[3].classList.remove("fa-check");
+                      validatePassword.current[3].classList.add("fa-xmark");
+                      validatePassword.current[3].style.color = "red";
+                    }
+
+                    if (/\d/.test(value)) {
+                      validatePassword.current[4].classList.remove("fa-xmark");
+                      validatePassword.current[4].classList.add("fa-check");
+                      validatePassword.current[4].style.color = "green";
+                    } else {
+                      validatePassword.current[4].classList.remove("fa-check");
+                      validatePassword.current[4].classList.add("fa-xmark");
+                      validatePassword.current[4].style.color = "red";
+                    }
+                  }}
+                  onClick={() => {
+                    errorPassword.current.style.display = "block";
+                    errorPasswordMessage.current.style.display = "none";
+                  }}
+                  onKeyDown={(e) => {
+                    if (e.key === "Tab") {
+                      errorPassword.current.style.display = "none";
+                      errorPasswordMessage.current.style.display = "none";
+                    }
+                  }}
                 />
+                <div id="errorPassword" ref={errorPassword}>
+                  <dl>
+                    <dd>
+                      <i
+                        class="fa-solid fa-xmark"
+                        ref={(el) => (validatePassword.current[0] = el)}
+                      ></i>
+                      <p>Password Should be at least 8 characters long</p>
+                    </dd>
+                    <dd>
+                      <i
+                        class="fa-solid fa-xmark"
+                        ref={(el) => (validatePassword.current[1] = el)}
+                      ></i>
+                      <p>password should contain at least 1 uppercase letter</p>
+                    </dd>
+                    <dd>
+                      <i
+                        class="fa-solid fa-xmark"
+                        ref={(el) => (validatePassword.current[2] = el)}
+                      ></i>
+                      <p>password should contain at least 1 lowecase letter</p>
+                    </dd>
+                    <dd>
+                      <i
+                        class="fa-solid fa-xmark"
+                        ref={(el) => (validatePassword.current[3] = el)}
+                      ></i>
+                      <p>
+                        password should contain at least 1 special character
+                      </p>
+                    </dd>
+                    <dd>
+                      <i
+                        class="fa-solid fa-xmark"
+                        ref={(el) => (validatePassword.current[4] = el)}
+                      ></i>
+                      <p>password should contain at least 1 number</p>
+                    </dd>
+                  </dl>
+                </div>
+                <span
+                  ref={errorPasswordMessage}
+                  style={{ margin: "1rem 0", color: "red" }}
+                ></span>
               </aside>
               <aside>
                 <label>Confirm Password</label>
@@ -173,6 +352,16 @@ function SignUp() {
                       signupButton.current.style.cursor = "pointer";
                     }
                   }}
+                  onClick={() => {
+                    errorPassword.current.style.display = "none";
+                    errorPasswordMessage.current.style.display = "none";
+                  }}
+                  onKeyDown={(e) => {
+                    if (e.key === "Tab") {
+                      errorPassword.current.style.display = "none";
+                      errorPasswordMessage.current.style.display = "none";
+                    }
+                  }}
                 />
               </aside>
             </aside>
@@ -182,7 +371,20 @@ function SignUp() {
               </p>
             )}
             <blockquote id="moresignupdetailsaside">
-              <input type="checkbox" required />
+              <input
+                type="checkbox"
+                required
+                onClick={() => {
+                  errorPassword.current.style.display = "none";
+                  errorPasswordMessage.current.style.display = "none";
+                }}
+                onKeyDown={(e) => {
+                  if (e.key === "Tab") {
+                    errorPassword.current.style.display = "none";
+                    errorPasswordMessage.current.style.display = "none";
+                  }
+                }}
+              />
               <label>I accept the terms and conditions</label>
             </blockquote>
             <button
@@ -198,6 +400,12 @@ function SignUp() {
                   showmoreInputs.current.style.display = "block";
                   orLinehidden.current.style.display = "none";
                   emailhidden.current.style.display = "none";
+                }
+              }}
+              onKeyDown={(e) => {
+                if (e.key === "Tab") {
+                  errorPassword.current.style.display = "none";
+                  errorPasswordMessage.current.style.display = "none";
                 }
               }}
             >

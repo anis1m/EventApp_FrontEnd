@@ -1,0 +1,239 @@
+.createEventForm {
+  width: 100%;
+}
+
+.createEventForm form {
+  width: 90%;
+  margin: 1rem auto;
+  padding: 1.5rem 2rem;
+  border: 1px solid lightgray;
+  border-radius: 1rem;
+}
+
+#ifCoHostcreateEventForm {
+  padding: 0.7rem;
+  width: 20rem;
+  background: linear-gradient(90deg, purple, darkblue, violet);
+  font-size: 1rem;
+  color: white;
+  margin-left: 20%;
+  margin-top: 2rem;
+  border-radius: 0.5rem;
+}
+
+.insideCreateEventForm {
+  display: flex;
+  align-items: start;
+  gap: 1.5rem;
+}
+
+.leftsideinsideCreateEventForm {
+  flex-basis: 35%;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  gap: 1rem;
+}
+
+.leftsideinsideCreateEventForm input {
+  font-size: 1rem;
+  padding: 0.5rem 1rem;
+  border: 1px solid lightgray;
+  border-radius: 0.5rem;
+  width: 100%;
+}
+
+.leftsideinsideCreateEventForm textarea {
+  padding: 0.5rem 1rem;
+  border: 1px solid lightgray;
+  border-radius: 0.5rem;
+  font-size: 1rem;
+  resize: none;
+  width: 100%;
+}
+
+.rightsideinsideCreateEventForm {
+  flex-basis: 65%;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  gap: 2rem;
+  width: 100%;
+}
+
+.part1rightsideinsideCreateEventForm {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  gap: 1.5rem;
+}
+
+.part1rightsideinsideCreateEventForm aside {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  width: 100%;
+}
+
+.part1rightsideinsideCreateEventForm aside div {
+  display: flex;
+  gap: 1rem;
+  flex-direction: column;
+  max-height: 8rem;
+  overflow-y: auto;
+}
+
+.part1rightsideinsideCreateEventForm aside div button {
+  width: 30px;
+  height: 30px;
+  background-color: purple;
+  border-radius: 50%;
+  color: white;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.part1rightsideinsideCreateEventForm aside div dl {
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+}
+
+.part1rightsideinsideCreateEventForm aside dl dd input {
+  padding: 0.5rem;
+  border: 1px solid lightgray;
+  font-size: 1rem;
+  border-radius: 0.5rem;
+  width: 11rem;
+}
+
+.part1rightsideinsideCreateEventForm aside blockquote {
+  display: flex;
+  align-items: start;
+  border: 1px solid lightgray;
+  width: 100%;
+  padding: 0.5rem;
+  gap: 1rem;
+  border-radius: 0.5rem;
+}
+
+.part1rightsideinsideCreateEventForm aside blockquote i {
+  font-size: 1.2rem;
+}
+
+.part1rightsideinsideCreateEventForm aside blockquote input {
+  font-size: 1rem;
+  background-color: transparent;
+  outline: none;
+  width: 100%;
+}
+
+.part2rightsideinsideCreateEventForm {
+  flex-basis: 60%;
+  display: flex;
+  align-items: start;
+  gap: 1rem;
+}
+
+.part2rightsideinsideCreateEventForm aside {
+  display: flex;
+  align-items: baseline;
+  flex-direction: column;
+  gap: 0.5rem;
+  width: 100%;
+}
+
+.part2rightsideinsideCreateEventForm aside div {
+  display: flex;
+  gap: 1rem;
+  width: inherit;
+  margin-bottom: 1rem;
+}
+
+.part2part3rightsideinsideCreateEventForm {
+  width: 100%;
+  display: flex;
+  gap: 1rem;
+}
+
+.part2rightsideinsideCreateEventForm aside div blockquote {
+  width: 100%;
+  border: 1px solid lightgray;
+  border-radius: 0.5rem;
+  padding: 0.5rem 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.part2rightsideinsideCreateEventForm aside blockquote i {
+  font-size: 1.2rem;
+}
+
+.part2rightsideinsideCreateEventForm aside blockquote input {
+  font-size: 1rem;
+  outline: none;
+  width: 100%;
+}
+
+.part3rightsideinsideCreateEventForm {
+  flex-basis: 40%;
+  width: 100%;
+}
+.part3rightsideinsideCreateEventForm aside {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.part3rightsideinsideCreateEventForm aside form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.part3rightsideinsideCreateEventForm aside form input {
+  padding: 0.5rem 1rem;
+  border: 1px solid lightgray;
+  font-size: 1rem;
+  border-radius: 0.5rem;
+  margin: 0.5rem 0 1rem 0;
+}
+
+.part4rightsideinsideCreateEventForm {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  column-gap: 4rem;
+}
+
+.part4rightsideinsideCreateEventForm ul {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  height: 21rem;
+
+  border: 1px solid gray;
+  overflow-y: scroll;
+  padding: 1rem;
+  background-color: whitesmoke;
+  margin-top: 0.5rem;
+}
+
+.part4rightsideinsideCreateEventForm ul.shrink {
+  height: 15.7rem;
+}
+
+.part4rightsideinsideCreateEventForm ul li {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.part4rightsideinsideCreateEventForm ul li input {
+  width: 1.2rem;
+  height: 1.2rem;
+}

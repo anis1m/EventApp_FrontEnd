@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { createContext, useEffect, useState } from "react";
 import Navbar from "./Navbar";
 import Carousal from "./Carousal";
 import "./Dashboard.css";
@@ -11,52 +11,35 @@ import MoreEvents from "./MoreEvents";
 import Destinations from "./Destinations";
 import Footer from "./Footer";
 import axios from "axios";
+import EventsCarousal from "./EventsCarousal";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
+export const Mycontext = createContext();
 function Dashboard() {
-  const [cardData, setCardData] = useState([]);
   const [location, setLocation] = useState("");
-  const [pageNumber, setPageNumber] = useState(1);
-  const [limitNumber, setLimitNumber] = useState(20);
-
-  useEffect(() => {
-    const url = `http://127.0.0.1:3500/api/v3/event/?page=${pageNumber}&limit=${limitNumber}`;
-    async function fetchData() {
-      try {
-        const res = await axios.get(url, {
-          withCredentials: true,
-        });
-        const data = await res.data;
-        console.log(data);
-        setCardData((prevData) => [...prevData, ...data.data]);
-        console.log(cardData);
-      } catch (err) {
-        console.log(err);
-      }
-    }
-
-    fetchData();
-  }, [pageNumber, limitNumber]);
 
   function locationChange(locate) {
     setLocation(locate);
   }
 
-  function pageandlimitset(page, limit) {
-    console.log(page, limit);
-    setPageNumber(page);
-    setLimitNumber(limit);
-  }
-
   return (
     <>
-      <Navbar onlocationChange={locationChange} />
+      <ToastContainer />
+      <Mycontext.Provider value={locationChange}>
+        <Navbar />
+      </Mycontext.Provider>
+
       <Carousal />
       <Options />
       <BrowsingEvents locationName={location} />
       <Filters />
-      <Cards />
-      <EventsInArea locationName={location} />
-      <MoreEvents moreEventsData={cardData} pageandlimitset={pageandlimitset} />
+
+      <EventsCarousal propKeyword={location} propCategory="location" />
+      <EventsCarousal propKeyword={location} propCategory="Adventure" />
+      <EventsCarousal propKeyword="price" propCategory="699" />
+      <EventsCarousal propKeyword="All" propCategory="all" />
+      <EventsCarousal propKeyword="Adventure" propCategory="Adventure" />
       <Destinations />
       <Footer />
     </>

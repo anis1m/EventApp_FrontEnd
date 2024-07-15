@@ -38,6 +38,7 @@ const RoutingMachine = ({ start, end, calculateRoute, currentDistance }) => {
     routingControl.on("routesfound", function (e) {
       const routes = e.routes;
       const summary = routes[0].summary;
+
       if (currentDistance.current) {
         currentDistance.current.innerHTML = `${(
           summary.totalDistance / 1000

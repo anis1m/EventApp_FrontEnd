@@ -26,23 +26,59 @@ function Footer() {
           <div className="footer-section-2">
             <h3>Important Links</h3>
             <aside>
-              <p>About Us</p>
-              <p>Contact Us</p>
-              <p>Help</p>
-              <p>FAQ's</p>
-              <p>Terms and Conditions</p>
-              <p>Privacy Policy</p>
-              <p>Blog</p>
-              <p>Career</p>
+              <blockquote>
+                <i class="fa-solid fa-address-card"></i>
+                <p>About Us</p>
+              </blockquote>
+              <blockquote>
+                <i class="fa-solid fa-address-book"></i>
+                <p>Contact Us</p>
+              </blockquote>
+              <blockquote>
+                <i class="fa-solid fa-clipboard-question"></i>
+                <p>Help</p>
+              </blockquote>
+              <blockquote>
+                <i class="fa-solid fa-person-circle-question"></i>
+                <p>FAQ's</p>
+              </blockquote>
+              <blockquote>
+                <i class="fa-solid fa-clipboard"></i>
+                <p>Terms and Conditions</p>
+              </blockquote>
+              <blockquote>
+                <i class="fa-solid fa-user-lock"></i>
+                <p>Privacy Policy</p>
+              </blockquote>
+              <blockquote>
+                <i class="fa-solid fa-square-rss"></i>
+                <p>Blog</p>
+              </blockquote>
+              <blockquote>
+                <i class="fa-solid fa-user-graduate"></i>
+                <p>Career</p>
+              </blockquote>
             </aside>
           </div>
           <div className="footer-section-3">
             <h3>Quick Links</h3>
             <aside>
-              <p>Events</p>
-              <p>Plays</p>
-              <p>Sports</p>
-              <p>Activities</p>
+              <blockquote>
+                <i class="fa-solid fa-calendar-days"></i>
+                <p>Events</p>
+              </blockquote>
+              <blockquote>
+                <i class="fa-solid fa-circle-play"></i>
+                <p>Plays</p>
+              </blockquote>
+              <blockquote>
+                <i class="fa-solid fa-volleyball"></i>
+                <p>Sports</p>
+              </blockquote>
+              <blockquote>
+                <i class="fa-solid fa-chart-line"></i>
+                <p>Activities</p>
+              </blockquote>
             </aside>
             <h3>Our Parteners</h3>
           </div>
