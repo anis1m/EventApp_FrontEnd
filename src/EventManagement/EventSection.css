@@ -1,0 +1,120 @@
+.eventSection {
+  width: 70%;
+  margin: 4rem auto;
+}
+
+.eventSection h1 {
+  font-size: 3rem;
+  font-weight: 700;
+}
+
+.eventSection aside {
+  display: flex;
+  align-items: start;
+  justify-content: left;
+  gap: 2rem;
+  margin: 4rem 0 3rem 0;
+  width: 100%;
+}
+
+.eventSection aside blockquote {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex-direction: column;
+  width: fit-content;
+}
+
+.eventSection aside blockquote h4 {
+  color: gray;
+  cursor: pointer;
+}
+
+.eventSection aside blockquote hr {
+  width: 120%;
+  height: 3px;
+  background-color: blue;
+}
+
+.eventSection dl {
+  width: 100%;
+}
+
+.eventSection dd {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  display: inline-block;
+}
+
+.eventSection dl dd:nth-child(1) {
+  border: 1px solid lightgray;
+  padding: 1rem;
+  width: 18rem;
+  margin-right: 2rem;
+}
+
+.eventSection dl dd:nth-child(1):hover {
+  border-color: blue;
+}
+
+.eventSection dl dd:nth-child(1) i {
+  font-size: 1.2rem;
+}
+
+.eventSection dl dd:nth-child(1) input {
+  outline: none;
+  width: 85%;
+  font-size: 1.1rem;
+  margin-left: 0.5rem;
+  display: inline-block;
+}
+
+.eventSection dl dd:nth-child(1) input::placeholder {
+  color: darkgray;
+  font-weight: 600;
+}
+
+.eventSection dl dd:nth-child(2) {
+  justify-content: center;
+  width: fit-content;
+  padding: 0.7rem 1.5rem;
+
+  border: 1px solid lightgray;
+  border-radius: 2rem;
+  margin-right: 1rem;
+}
+
+.eventSection dl dd h4 {
+  display: inline;
+  margin-left: 0.5rem;
+}
+
+.eventSection dl dd:nth-child(3) {
+  justify-content: center;
+  width: fit-content;
+  padding: 0.7rem 1.5rem;
+
+  border: 1px solid lightgray;
+  border-radius: 2rem;
+  margin-right: 3rem;
+}
+
+.eventSection dl dd:nth-child(4) {
+  justify-content: center;
+  width: fit-content;
+  padding: 0.7rem 1.5rem;
+
+  border: 1px solid lightgray;
+  border-radius: 2rem;
+}
+
+.eventSection dl dd:nth-child(5) button {
+  background-color: brown;
+  border-radius: 0.5rem;
+  padding: 1rem 2rem;
+  font-size: 1rem;
+  color: white;
+  font-weight: 600;
+  margin-left: 15rem;
+}

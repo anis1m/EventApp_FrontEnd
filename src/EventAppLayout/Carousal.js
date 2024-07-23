@@ -53,9 +53,6 @@ function Carousal() {
       <div className="slider" ref={w}>
         <div className="carousalImages" ref={slider}>
           <figure>
-            <img src={i1} />
-          </figure>
-          <figure>
             <img src={i2} />
           </figure>
           <figure>

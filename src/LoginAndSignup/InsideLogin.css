@@ -93,3 +93,14 @@
 .insideLogin aside {
   margin: 1rem 0;
 }
+
+#loginWithGoogle {
+  margin-top: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+#loginWithGoogle i {
+  font-size: 2rem;
+}

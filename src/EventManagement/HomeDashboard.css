@@ -1,0 +1,151 @@
+.homedashboard {
+  width: 70%;
+  margin: 3rem auto;
+}
+.homedashboard h1 {
+  font-size: 3rem;
+  font-weight: 800;
+}
+
+.insidehomedashboard1 {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.insidehomedashboard1 aside {
+  margin-top: 2rem;
+  flex-basis: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  flex-direction: column;
+  padding: 1.5rem 2.5rem;
+  background-color: whitesmoke;
+  border-radius: 0.5rem;
+}
+
+.insidehomedashboard1 aside i {
+  font-size: 2rem;
+  color: blue;
+}
+
+.insidehomedashboard1 aside button {
+  background-color: white;
+  color: gray;
+  font-weight: 600;
+  font-size: 1rem;
+  text-align: center;
+  padding: 0.7rem 2rem;
+  border: 2px solid gray;
+  border-radius: 0.5rem;
+}
+
+.insidehomedashboard2 {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  grid-area: 1rem;
+  justify-content: left;
+  border: 1px solid lightgray;
+  margin-top: 2rem;
+  border-radius: 0.5rem;
+  padding: 2rem 1.5rem;
+}
+
+.insidehomedashboard2 h1 {
+  font-size: 2rem;
+  font-weight: 600;
+}
+
+.insidehomedashboard2 h3 {
+  color: gray;
+  margin-bottom: 1.5rem;
+}
+
+.insidehomedashboard2 aside {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  justify-content: left;
+  width: 100%;
+  margin-bottom: 1.5rem;
+}
+
+.insidehomedashboard2 aside blockquote {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  gap: 0.5rem;
+}
+
+.insidehomedashboard2 aside button {
+  margin-left: auto;
+  padding: 0.5rem 1.5rem;
+  background-color: blue;
+  color: white;
+  font-size: 1.2rem;
+  border-radius: 2rem;
+}
+
+.insidehomedashboard2 aside input {
+  height: 1.5rem;
+  width: 1.5rem;
+}
+
+.insidehomedashboard3 {
+  width: 100%;
+  display: flex;
+  align-items: start;
+  justify-content: left;
+  gap: 0.5rem;
+  flex-direction: column;
+  padding: 1rem;
+  border: 1px solid lightgray;
+  border-radius: 0.5rem;
+  margin-top: 2rem;
+}
+
+.insidehomedashboard3 h1 {
+  font-size: 2rem;
+  font-weight: 600;
+}
+
+.insidehomedashboard3 a {
+  color: blue;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.insidehomedashboard3 div {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  justify-content: space-between;
+  margin-top: 2rem;
+}
+
+.insidehomedashboard3 div aside {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+  width: 280px;
+  height: 150px;
+  border: 1px solid lightgray;
+  border-radius: 0.5rem;
+}
+
+.insidehomedashboard3 div aside i {
+  font-size: 2rem;
+  color: blue;
+}
+
+.insidehomedashboard3 div aside h4 {
+  color: gray;
+}

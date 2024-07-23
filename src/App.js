@@ -28,13 +28,24 @@ import BookPayment from "./BookEvent/BookPayment";
 import CoHostForm from "./CreateEvent/CoHostForm";
 import InsideLogin from "./LoginAndSignup/InsideLogin";
 import LikeEvent from "./LikeandShareEvent/LikeEvent";
+import DashboardHome from "./EventManagement/DashboardHome";
+import HomeDashboard from "./EventManagement/HomeDashboard";
+import HelpSection from "./EventManagement/HelpSection";
+import EventSection from "./EventManagement/EventSection";
+import FindTickets from "./EventManagement/FindTickets";
+import InsideSignup from "./LoginAndSignup/InsideSignup";
 
 function App() {
+  const [imagedata, setImageData] = useState();
+  function setImage(imgdata) {
+    setImageData(imgdata);
+  }
   return (
     <>
       <Routes>
-        <Route path="/" element={<Dashboard />} />
+        <Route path="/" element={<Dashboard imagedata={imagedata} />} />
         <Route path="/signup" element={<SignUp />}>
+          <Route path="inside-signup" element={<InsideSignup />} />
           <Route path="otp-verification" element={<SignupMoreDetails />} />
         </Route>
         <Route path="/login" element={<Login />}>
@@ -70,6 +81,17 @@ function App() {
         </Route>
         <Route path="/create-event/co-host-form" element={<CoHostForm />} />
         <Route path="/like-event" element={<LikeEvent />} />
+        <Route path="/manage-my-events" element={<DashboardHome />}>
+          <Route path="homepage" element={<HomeDashboard />} />
+
+          <Route path="events" element={<EventSection />} />
+        </Route>
+        <Route path="/manage-my-events/help" element={<HelpSection />} />
+
+        <Route
+          path="/manage-my-events/help/find-tickets"
+          element={<FindTickets />}
+        />
       </Routes>
     </>
   );

@@ -73,8 +73,15 @@
   width: 1.7rem;
 }
 
-.footer-section-2 aside blockquote p {
+.footer-section-2 aside blockquote a {
   font-size: 1.5rem;
+  text-decoration: none;
+  color: black;
+}
+
+.footer-section-2 aside blockquote a:hover {
+  text-decoration: underline;
+  color: blue;
 }
 
 .footer-section-3 {
@@ -104,8 +111,15 @@
   font-size: 1.5rem;
 }
 
-.footer-section-3 aside blockquote p {
+.footer-section-3 aside blockquote a {
   font-size: 1.5rem;
+  text-decoration: none;
+  color: black;
+}
+
+.footer-section-3 aside blockquote a:hover {
+  text-decoration: underline;
+  color: blue;
 }
 
 .footer-section-4 {

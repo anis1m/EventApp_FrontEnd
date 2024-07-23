@@ -16,18 +16,51 @@ import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 export const Mycontext = createContext();
-function Dashboard() {
+function Dashboard({ imagedata }) {
   const [location, setLocation] = useState("");
 
   function locationChange(locate) {
     setLocation(locate);
   }
 
+  useEffect(() => {
+    if ("geolocation" in navigator) {
+      navigator.geolocation.getCurrentPosition(
+        (position) => {
+          const lat = position.coords.latitude;
+          const lon = position.coords.longitude;
+
+          getLocationbyCoords(lat, lon);
+        },
+
+        (error) => {
+          console.error("Error fetching location:", error);
+        },
+        { enableHighAccuracy: true, timeout: 10000, maximumAge: 0 }
+      );
+    } else {
+      console.error("Geolocation is not available in this browser.");
+    }
+  }, []);
+
+  function getLocationbyCoords(lati, longi) {
+    const url = `https://api.opencagedata.com/geocode/v1/json?q=${lati}%2C${longi}&key=eb88828eefe7485a9547b3fa0da61537`;
+
+    axios
+      .get(url)
+      .then((response) => {
+        setLocation(response.data.results[0].components.city);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  }
+
   return (
     <>
       <ToastContainer />
       <Mycontext.Provider value={locationChange}>
-        <Navbar />
+        <Navbar locationName={location} imagedata={imagedata} />
       </Mycontext.Provider>
 
       <Carousal />

@@ -8,14 +8,8 @@ import { MapContainer, Popup, Marker, TileLayer } from "react-leaflet";
 import "leaflet/dist/leaflet.css";
 import L from "leaflet";
 import axios from "axios";
-
-delete L.Icon.Default.prototype._getIconUrl;
-L.Icon.Default.mergeOptions({
-  iconRetinaUrl:
-    "https://unpkg.com/leaflet@1.7.1/dist/images/marker-icon-2x.png",
-  iconUrl: "https://unpkg.com/leaflet@1.7.1/dist/images/marker-icon.png",
-  shadowUrl: "https://unpkg.com/leaflet@1.7.1/dist/images/marker-shadow.png",
-});
+import "leaflet.awesome-markers/dist/leaflet.awesome-markers.css";
+import "leaflet.awesome-markers/dist/leaflet.awesome-markers";
 
 function FindParticularEvents() {
   const { location, keyword } = useParams();
@@ -27,10 +21,36 @@ function FindParticularEvents() {
   const [loading, setLoading] = useState(false);
   let [longitude, setLongitude] = useState(0.0);
   let [latitude, setLatitude] = useState(0.0);
+  const [Markers, setMarkers] = useState([]);
+  const [markerId, setMarkerId] = useState(0);
 
   useEffect(() => {
     handleLocationFetch();
+    setMarkers([]);
   }, []);
+
+  function getAllLocations(dcard) {
+    for (let i = 0; i < dcard.length; i++) {
+      const url = `https://api.opencagedata.com/geocode/v1/json?q=${dcard[i].location}&key=eb88828eefe7485a9547b3fa0da61537`;
+      axios
+        .get(url)
+        .then((res) => {
+          console.log(res.data.results[0].geometry);
+          const geometry = res.data.results[0].geometry;
+          setMarkers((prev) => [
+            ...prev,
+            {
+              id: i + 1,
+              position: [geometry.lat, geometry.lng],
+              popupContent: dcard[i].location,
+            },
+          ]);
+        })
+        .catch((err) => {
+          console.log(err);
+        });
+    }
+  }
 
   function handleLocationFetch() {
     if ("geolocation" in navigator) {
@@ -76,12 +96,23 @@ function FindParticularEvents() {
       })
       .then((data) => {
         setDetailsCard(data.data);
+        console.log(data.data);
+        getAllLocations(data.data);
         setLoading(false);
       })
       .catch((error) => {
         console.log(error);
       });
   }, [url]);
+
+  const mark = [
+    { id: 1, position: [19.07283, 72.88261], popupContent: "" },
+    {
+      id: 2,
+      position: [18.986, 72.8259],
+      popupContent: "",
+    },
+  ];
 
   return (
     <>
@@ -262,7 +293,10 @@ function FindParticularEvents() {
                   <h2 style={{ margin: "15rem 40%" }}>Nothing Here</h2>
                 ) : (
                   detailsCard.map((databox, index) => (
-                    <div style={{ position: "relative" }}>
+                    <div
+                      style={{ position: "relative" }}
+                      onClick={() => setMarkerId(index + 1)}
+                    >
                       <div
                         className="detailTileLayoutofParticularEvent"
                         key={index}
@@ -312,10 +346,37 @@ function FindParticularEvents() {
                 url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
                 attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
               />
-
-              <Marker position={[latitude, longitude]}>
-                <Popup>Hello</Popup>
-              </Marker>
+              {Markers.map((d) => {
+                if (d.id === markerId) {
+                  return (
+                    <Marker
+                      key={d.id}
+                      position={d.position}
+                      icon={L.AwesomeMarkers.icon({
+                        icon: "certificate",
+                        prefix: "fa",
+                        markerColor: "red",
+                      })}
+                    >
+                      <Popup>{d.popupContent}</Popup>
+                    </Marker>
+                  );
+                } else {
+                  return (
+                    <Marker
+                      key={d.id}
+                      position={d.position}
+                      icon={L.AwesomeMarkers.icon({
+                        icon: "star",
+                        prefix: "fa",
+                        markerColor: "blue",
+                      })}
+                    >
+                      <Popup>{d.popupContent}</Popup>
+                    </Marker>
+                  );
+                }
+              })}
             </MapContainer>
           </div>
         </section>

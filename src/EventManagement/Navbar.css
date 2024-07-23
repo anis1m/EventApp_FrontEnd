@@ -1,0 +1,26 @@
+.dashboardhomenavbar {
+  width: 100%;
+  height: fit-content;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.1rem 1.5rem;
+  border-bottom: 1px solid lightgray;
+}
+
+.dashboardhomenavbar img {
+  width: 150px;
+  height: 65px;
+}
+
+.dashboardhomenavbar aside {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.dashboardhomenavbar aside img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}

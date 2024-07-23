@@ -5,15 +5,16 @@ import { Link, useNavigate } from "react-router-dom";
 import logo from "./carousalImages/Image 328.png";
 import CitySelection from "./CitySelection";
 import Calendar from "react-calendar";
+import noimage from "../EventAppLayout/carousalImages/noImage.jpg";
 
-function Navbar() {
+function Navbar({ locationName, imagedata }) {
   const [location, setLocation] = useState();
   const accountOptions = useRef();
   const findparticularevent = useNavigate();
   const [visible, setVisible] = useState(false);
   const updateTime = useRef();
   const [calenderVisible, setCalenderVisible] = useState(false);
-  const [value, onChange] = useState(new Date());
+  const [calender, setCalender] = useState(new Date());
   const navigateRandom = useNavigate();
 
   const user = sessionStorage.getItem("user");
@@ -125,7 +126,7 @@ function Navbar() {
             </aside>
             <div id="i2" onClick={() => setVisible(true)}>
               <i class="fa-solid fa-location-dot"></i>
-              <h3>Location</h3>
+              <h3>{locationName === "" ? "Location" : locationName}</h3>
               <i class="fa-solid fa-angle-down"></i>
               {/*<input
               type="search"
@@ -154,7 +155,7 @@ function Navbar() {
                     <i class="fa-solid fa-circle-user" id="fa-CircleUser"></i>
                     <a href="/login/inside-login">Log In</a>
                     <h2>/</h2>
-                    <a href="/signup">Sign Up</a>
+                    <a href="/signup/inside-signup">Sign Up</a>
                   </aside>
                 </>
               ) : (
@@ -164,8 +165,17 @@ function Navbar() {
                     accountOptions.current.style.display = "block";
                   }}
                 >
-                  <img src="images_/empty.jpg" />
-                  <h4>{JSON.parse(user).email}</h4>
+                  <img
+                    src={
+                      imagedata
+                        ? URL.createObjectURL(imagedata)
+                        : (JSON.parse(user).profile = ""
+                            ? noimage
+                            : JSON.parse(user).profile)
+                    }
+                  />
+
+                  <h4>{JSON.parse(user).name}</h4>
                   <i
                     className="fa-solid fa-angle-down"
                     onClick={() => {
@@ -247,7 +257,9 @@ function Navbar() {
           zIndex: 1,
         }}
       >
-        {calenderVisible && <Calendar onChange={onChange} value={value} />}
+        {calenderVisible && (
+          <Calendar onChange={setCalender} value={calender} />
+        )}
       </div>
       <div
         className="accountOptions"
@@ -258,7 +270,7 @@ function Navbar() {
       >
         <aside>
           <a>Browse events</a>
-          <a>Manage my events</a>
+          <a href="/manage-my-events/homepage">Manage my events</a>
         </aside>
         <aside>
           <a>Tickets (0)</a>

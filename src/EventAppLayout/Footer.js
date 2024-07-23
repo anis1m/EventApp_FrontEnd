@@ -3,6 +3,7 @@ import "./Footer.css";
 import logo from "./carousalImages/Image 328.png";
 import logo1 from "./carousalImages/Image 343.png";
 import logo2 from "./carousalImages/Image 344.png";
+import { Link, NavLink } from "react-router-dom";
 
 function Footer() {
   return (
@@ -28,35 +29,35 @@ function Footer() {
             <aside>
               <blockquote>
                 <i class="fa-solid fa-address-card"></i>
-                <p>About Us</p>
+                <a>About Us</a>
               </blockquote>
               <blockquote>
                 <i class="fa-solid fa-address-book"></i>
-                <p>Contact Us</p>
+                <a>Contact Us</a>
               </blockquote>
               <blockquote>
                 <i class="fa-solid fa-clipboard-question"></i>
-                <p>Help</p>
+                <a href="/manage-my-events/help">Help</a>
               </blockquote>
               <blockquote>
                 <i class="fa-solid fa-person-circle-question"></i>
-                <p>FAQ's</p>
+                <a>FAQ's</a>
               </blockquote>
               <blockquote>
                 <i class="fa-solid fa-clipboard"></i>
-                <p>Terms and Conditions</p>
+                <a>Terms and Conditions</a>
               </blockquote>
               <blockquote>
                 <i class="fa-solid fa-user-lock"></i>
-                <p>Privacy Policy</p>
+                <a>Privacy Policy</a>
               </blockquote>
               <blockquote>
                 <i class="fa-solid fa-square-rss"></i>
-                <p>Blog</p>
+                <a>Blog</a>
               </blockquote>
               <blockquote>
                 <i class="fa-solid fa-user-graduate"></i>
-                <p>Career</p>
+                <a>Career</a>
               </blockquote>
             </aside>
           </div>
@@ -65,19 +66,19 @@ function Footer() {
             <aside>
               <blockquote>
                 <i class="fa-solid fa-calendar-days"></i>
-                <p>Events</p>
+                <a>Events</a>
               </blockquote>
               <blockquote>
                 <i class="fa-solid fa-circle-play"></i>
-                <p>Plays</p>
+                <a>Plays</a>
               </blockquote>
               <blockquote>
                 <i class="fa-solid fa-volleyball"></i>
-                <p>Sports</p>
+                <a>Sports</a>
               </blockquote>
               <blockquote>
                 <i class="fa-solid fa-chart-line"></i>
-                <p>Activities</p>
+                <a>Activities</a>
               </blockquote>
             </aside>
             <h3>Our Parteners</h3>

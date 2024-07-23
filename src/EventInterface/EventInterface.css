@@ -67,6 +67,14 @@
   width: 100%;
 }
 
+.leftsideInsideEventInterfaceDetails figure button {
+  padding: 0.5rem 1.5rem;
+  font-weight: 600;
+  color: white;
+  background-color: brown;
+  border-radius: 0.5rem;
+}
+
 .middlesideInsideEventInterfaceDetails {
   flex-basis: 50%;
   width: 100%;
