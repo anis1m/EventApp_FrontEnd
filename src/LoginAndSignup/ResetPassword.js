@@ -17,7 +17,7 @@ function ResetPassword() {
   const { token } = useParams();
   const [resetPassword, setResetPassword] = useState("");
   const [againresetPassword, setAgainResetpassword] = useState("");
-  const url = `http://127.0.0.1:3500/api/v3/account/resetPassword/${token}?email=${email}`;
+  const url = `${process.env.REACT_APP_API_URL}/api/v3/account/resetPassword/${token}?email=${email}`;
   const nav = useNavigate();
 
   function handlesubmit(e) {

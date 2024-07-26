@@ -6,6 +6,7 @@ import i3 from "./carousalImages/i3.png";
 import i4 from "./carousalImages/i4.jpg";
 import i5 from "./carousalImages/i5.png";
 import i6 from "./carousalImages/i8.jpg";
+import i7 from "./carousalImages/i9.jpg";
 
 function Carousal() {
   const slider = useRef();
@@ -66,6 +67,9 @@ function Carousal() {
           </figure>
           <figure>
             <img src={i6} />
+          </figure>
+          <figure>
+            <img src={i7} />
           </figure>
         </div>
       </div>

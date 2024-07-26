@@ -86,7 +86,7 @@ function FindParticularEvents() {
       });
   }
 
-  const url = `http://127.0.0.1:3500/api/v3/event/getEvent/${location}/${keyword}`;
+  const url = `${process.env.REACT_APP_API_URL}/api/v3/event/getEvent/${location}/${keyword}`;
   useEffect(() => {
     setLoading(true);
     fetch(url)

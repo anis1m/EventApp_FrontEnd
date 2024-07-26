@@ -10,7 +10,7 @@ function EventsInArea({ locationName }) {
   const navigate = useNavigate();
 
   useEffect(() => {
-    const url = `http://127.0.0.1:3500/api/v3/event/getEventByLocation/${locationName}`;
+    const url = `${process.env.REACT_APP_API_URL}/api/v3/event/getEventByLocation/${locationName}`;
     console.log(locationName);
     fetch(url)
       .then((response) => {

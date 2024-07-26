@@ -9,7 +9,7 @@ import logo from "../EventAppLayout/carousalImages/Image 328.png";
 function ForgotPassword() {
   const [forgotpasswordmail, setForgotpasswordmail] = useState("");
 
-  const url = "http://127.0.0.1:3500/api/v3/account/forgotPassword";
+  const url = `${process.env.REACT_APP_API_URL}/api/v3/account/forgotPassword`;
 
   function handleSubmit(e) {
     e.preventDefault();

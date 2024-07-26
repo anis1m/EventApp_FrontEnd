@@ -20,7 +20,7 @@ function EventsCarousal({ propKeyword, propCategory }) {
   let idmap = new Map();
   const [idMap, setIdMap] = useState(new Map());
   useEffect(() => {
-    const url = `http://127.0.0.1:3500/api/v3/event/getEventsByProps/${propKeyword}?category=${propCategory}`;
+    const url = `${process.env.REACT_APP_API_URL}/api/v3/event/getEventsByProps/${propKeyword}?category=${propCategory}`;
     console.log(propKeyword);
     console.log(propCategory);
     axios
@@ -54,9 +54,9 @@ function EventsCarousal({ propKeyword, propCategory }) {
   function getTrueValues(imap) {
     console.log(sessionStorage.getItem("id"));
     if (sessionStorage.getItem("id") != null) {
-      const url1 = `http://127.0.0.1:3500/api/v3/account/getlikedEventIds/${sessionStorage.getItem(
-        "id"
-      )}`;
+      const url1 = `${
+        process.env.REACT_APP_API_URL
+      }/api/v3/account/getlikedEventIds/${sessionStorage.getItem("id")}`;
       axios
         .get(url1)
         .then((res) => {
@@ -77,7 +77,7 @@ function EventsCarousal({ propKeyword, propCategory }) {
   function likeanddislike(eventId, condition, accountId) {
     console.log(idMap);
     console.log(condition);
-    const url = `http://127.0.0.1:3500/api/v3/account/likedEvent/${eventId}/${accountId}`;
+    const url = `${process.env.REACT_APP_API_URL}/api/v3/account/likedEvent/${eventId}/${accountId}`;
     axios
       .patch(url, {
         isLiked: condition,

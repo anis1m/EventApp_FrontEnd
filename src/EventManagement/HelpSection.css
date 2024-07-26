@@ -120,10 +120,18 @@
 }
 
 #stillhavequestionshelpsection button {
-  padding: 1rem 2rem;
+  padding: 0.7rem 2rem;
   font-size: 1.1rem;
   color: white;
   background-color: brown;
   border-radius: 0.5rem;
   margin-top: 2rem;
+}
+
+.helpSectionfeaturedArticles dl dd h4 {
+  cursor: pointer;
+}
+
+.insidehelpsectionBrowsebytopic dl dd h3 {
+  cursor: pointer;
 }

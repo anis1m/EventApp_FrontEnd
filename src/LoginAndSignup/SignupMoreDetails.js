@@ -20,8 +20,7 @@ function SignupMoreDetails() {
   const phone = query.get("phone");
   function verifyotp() {
     if (email != null && email != "") {
-      const url =
-        "http://127.0.0.1:3500/api/v3/account/verifyAccount?email=" + email;
+      const url = `${process.env.REACT_APP_API_URL}/api/v3/account/verifyAccount?email=${email}`;
       axios
         .post(url, {
           otp,
@@ -42,9 +41,7 @@ function SignupMoreDetails() {
         });
     } else {
       const encodedPhoneNumber = encodeURIComponent(phone);
-      const url =
-        "http://127.0.0.1:3500/api/v3/account/verifyAccount?phone=" +
-        encodedPhoneNumber;
+      const url = `${process.env.REACT_APP_API_URL}/api/v3/account/verifyAccount?phone=${encodedPhoneNumber}`;
       axios
         .post(url, {
           otp,

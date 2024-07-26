@@ -34,6 +34,9 @@ import HelpSection from "./EventManagement/HelpSection";
 import EventSection from "./EventManagement/EventSection";
 import FindTickets from "./EventManagement/FindTickets";
 import InsideSignup from "./LoginAndSignup/InsideSignup";
+import RequestRefund from "./EventManagement/RequestRefund";
+import ContactOrganizer from "./EventManagement/ContactOrganizer";
+import ContactUs from "./EventManagement/ContactUs";
 
 function App() {
   const [imagedata, setImageData] = useState();
@@ -92,6 +95,15 @@ function App() {
           path="/manage-my-events/help/find-tickets"
           element={<FindTickets />}
         />
+        <Route
+          path="/manage-my-events/help/request-refund"
+          element={<RequestRefund />}
+        />
+        <Route
+          path="/manage-my-events/help/contact-event-organizer"
+          element={<ContactOrganizer />}
+        />
+        <Route path="/contact-us" element={<ContactUs />} />
       </Routes>
     </>
   );

@@ -12,7 +12,7 @@ import PhoneInput from "react-phone-number-input";
 import { width } from "@mui/system";
 
 function InsideLogin() {
-  const url = "http://127.0.0.1:3500/api/v3/account/loginAccount";
+  const url = `${process.env.REACT_APP_API_URL}/api/v3/account/loginAccount`;
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [phoneNumber, setPhoneNumber] = useState();
@@ -35,9 +35,11 @@ function InsideLogin() {
         })
         .catch((error) => {
           console.log(error);
-          toast.error(error.response.data.message, {
-            position: "bottom-center",
-          });
+          if (error.response) {
+            toast.error(error.response.data.message, {
+              position: "bottom-center",
+            });
+          }
         });
     } else {
       axios
@@ -62,7 +64,7 @@ function InsideLogin() {
   }
 
   function getUserPhone(phoneNo) {
-    const url = `http://127.0.0.1:3500/api/v3/account/getAccountByPhone/${phoneNo}`;
+    const url = `${process.env.REACT_APP_API_URL}/api/v3/account/getAccountByPhone/${phoneNo}`;
     axios
       .get(url)
       .then((response) => {
@@ -85,7 +87,7 @@ function InsideLogin() {
   }
 
   function getUserId(mail) {
-    const url = `http://127.0.0.1:3500/api/v3/account/getAccountByMail/${mail}`;
+    const url = `${process.env.REACT_APP_API_URL}/api/v3/account/getAccountByMail/${mail}`;
     axios
       .get(url)
       .then((response) => {

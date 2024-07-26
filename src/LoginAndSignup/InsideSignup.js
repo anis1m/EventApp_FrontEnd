@@ -12,9 +12,12 @@ import noimage from "../EventAppLayout/carousalImages/noImage.jpg";
 import { GoogleOAuthProvider, GoogleLogin } from "@react-oauth/google";
 import { jwtDecode } from "jwt-decode";
 import FacebookLogin from "@greatsumini/react-facebook-login";
+import { isValidPhoneNumber } from "react-phone-number-input";
+import Cropper from "react-cropper";
+import "cropperjs/dist/cropper.css";
 
 function InsideSignup() {
-  const url = "http://127.0.0.1:3500/api/v3/account/newAccount";
+  const url = `${process.env.REACT_APP_API_URL}/api/v3/account/newAccount`;
   const redirectnavigate = useNavigate();
   const [email, setEmail] = useState("");
   const [phonenumber, setPhoneNumber] = useState();
@@ -34,8 +37,13 @@ function InsideSignup() {
   const errorPasswordMessage = useRef();
   const [previewUrl, setPreviewUrl] = useState(false);
   const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[\W_]).{8,}$/;
+  const [image, setImage] = useState(null);
+  const cropperRef = useRef();
 
   function postdata() {
+    if (fileinfo) {
+      const path = "../../public/images_" + fileinfo.name;
+    }
     return axios
       .post(url, {
         name,
@@ -44,7 +52,7 @@ function InsideSignup() {
         password,
         phone: phonenumber,
         confirmPassword,
-        imageurl: "",
+        imageurl: fileinfo.name,
         signedupby: "",
       })
       .then((res) => {
@@ -66,8 +74,12 @@ function InsideSignup() {
       .catch((error) => {
         console.log(error);
         console.log(error.request.status);
+        if (error.response) {
+          toast.error(error.response.data.message, {
+            position: "bottom-center",
+          });
+        }
 
-        toast.error(error.response.data.message, { position: "bottom-center" });
         return error.request.status;
       });
   }
@@ -105,7 +117,7 @@ function InsideSignup() {
   }
 
   function getUserId(mail) {
-    const url = `http://127.0.0.1:3500/api/v3/account/getAccountByMail/${mail}`;
+    const url = `${process.env.REACT_APP_API_URL}/api/v3/account/getAccountByMail/${mail}`;
     axios
       .get(url)
       .then((response) => {
@@ -158,10 +170,29 @@ function InsideSignup() {
         })
         .catch((err) => {
           console.log(err);
-          toast.error(err.response.data.message, { position: "bottom-center" });
+          if (err.response) {
+            toast.error(err.response.data.message, {
+              position: "bottom-center",
+            });
+          }
         });
     }
   }
+
+  function onCrop() {
+    const cropper = cropperRef.current.cropper;
+    const croppedCanvas = cropper.getCroppedCanvas();
+    croppedCanvas.toBlob((blob) => {
+      setFileInfo(blob);
+    });
+    setImage(null);
+  }
+
+  useEffect(() => {
+    if (fileinfo) {
+      URL.revokeObjectURL(fileinfo);
+    }
+  }, [fileinfo]);
 
   return (
     <>
@@ -226,6 +257,7 @@ function InsideSignup() {
                 errorPassword.current.style.display = "none";
                 errorPasswordMessage.current.style.display = "none";
               }}
+              limitMaxLength
             />
           </aside>
           <aside style={{ display: "none" }} ref={showmoreInputs}>
@@ -244,6 +276,7 @@ function InsideSignup() {
                       setFileInfo(e.target.files[0]);
                       setPreviewUrl(true);
                     }}
+                    accept="image/*"
                   />
                 </figure>
               </div>
@@ -255,9 +288,35 @@ function InsideSignup() {
 
               <aside>
                 <h3>Crop</h3>
-                <i class="fa-solid fa-scissors"></i>
+                <i
+                  class="fa-solid fa-scissors"
+                  onClick={() => {
+                    const reader = new FileReader();
+                    reader.onload = () => {
+                      setImage(reader.result);
+                    };
+                    if (fileinfo) {
+                      reader.readAsDataURL(fileinfo);
+                    }
+                  }}
+                  style={{ cursor: "pointer" }}
+                ></i>
               </aside>
             </figure>
+
+            {image && (
+              <aside>
+                <Cropper
+                  src={image}
+                  style={{ height: 400, width: "100%" }}
+                  initialAspectRatio={1}
+                  guides={false}
+                  ref={cropperRef}
+                />
+                <button onClick={onCrop}>Crop Image</button>
+              </aside>
+            )}
+
             <aside>
               <label>Full Name</label>
               <input
@@ -266,6 +325,11 @@ function InsideSignup() {
                 id="moresignupinputs"
                 required
                 onChange={(e) => setName(e.target.value)}
+                onInput={(e) => {
+                  const input = e.target;
+                  const value = input.value;
+                  input.value = value.replace(/[^a-zA-Z]/g, "");
+                }}
                 onClick={() => {
                   errorPassword.current.style.display = "none";
                   errorPasswordMessage.current.style.display = "none";

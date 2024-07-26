@@ -22,7 +22,7 @@ function LikeEvent() {
   }, []);
 
   useEffect(() => {
-    const url = "http://127.0.0.1:3500/api/v3/event/getAllEventIds";
+    const url = `${process.env.REACT_APP_API_URL}/api/v3/event/getAllEventIds`;
 
     axios
       .get(url)
@@ -41,9 +41,9 @@ function LikeEvent() {
   function getTrueValues(imap) {
     console.log(sessionStorage.getItem("id"));
     if (sessionStorage.getItem("id") != null) {
-      const url1 = `http://127.0.0.1:3500/api/v3/account/getlikedEventIds/${sessionStorage.getItem(
-        "id"
-      )}`;
+      const url1 = `${
+        process.env.REACT_APP_API_URL
+      }/api/v3/account/getlikedEventIds/${sessionStorage.getItem("id")}`;
       axios
         .get(url1)
         .then((res) => {
@@ -67,7 +67,7 @@ function LikeEvent() {
     for (const key of imp.keys()) {
       if (imp.get(key) === true) {
         console.log(key);
-        const url = `http://127.0.0.1:3500/api/v3/event/getEventByEventId/${key}`;
+        const url = `${process.env.REACT_APP_API_URL}/api/v3/event/getEventByEventId/${key}`;
         axios
           .get(url)
           .then((res) => {
@@ -84,7 +84,7 @@ function LikeEvent() {
   function likeanddislike(eventId, condition, accountId) {
     console.log(idMap);
     console.log(condition);
-    const url = `http://127.0.0.1:3500/api/v3/account/likedEvent/${eventId}/${accountId}`;
+    const url = `${process.env.REACT_APP_API_URL}/api/v3/account/likedEvent/${eventId}/${accountId}`;
     axios
       .patch(url, {
         isLiked: condition,

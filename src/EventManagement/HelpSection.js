@@ -44,17 +44,27 @@ function HelpSection() {
                 <i class="fa-regular fa-newspaper"></i>
                 <h4>Find your tickets</h4>
               </dd>
-              <dd>
+              <dd
+                onClick={() =>
+                  navigatehelpsection("/manage-my-events/help/request-refund")
+                }
+              >
                 <i class="fa-regular fa-newspaper"></i>
                 <h4>Request a refund</h4>
               </dd>
-              <dd>
+              <dd
+                onClick={() =>
+                  navigatehelpsection(
+                    "/manage-my-events/help/contact-event-organizer"
+                  )
+                }
+              >
                 <i class="fa-regular fa-newspaper"></i>
                 <h4>Contact the event organizer</h4>
               </dd>
               <dd>
                 <i class="fa-regular fa-newspaper"></i>
-                <h4>What is this charge from Eventbrite?</h4>
+                <h4>What is this charge from EventDTL?</h4>
               </dd>
               <dd>
                 <i class="fa-regular fa-newspaper"></i>
@@ -129,7 +139,9 @@ function HelpSection() {
         </div>
         <aside id="stillhavequestionshelpsection">
           <h2>Still have questions?</h2>
-          <button>Contact us</button>
+          <button onClick={() => navigatehelpsection("/contact-us")}>
+            Contact us
+          </button>
         </aside>
       </main>
     </>

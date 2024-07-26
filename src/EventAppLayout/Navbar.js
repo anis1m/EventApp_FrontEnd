@@ -6,6 +6,7 @@ import logo from "./carousalImages/Image 328.png";
 import CitySelection from "./CitySelection";
 import Calendar from "react-calendar";
 import noimage from "../EventAppLayout/carousalImages/noImage.jpg";
+import logo1 from "./carousalImages/Image 416.png";
 
 function Navbar({ locationName, imagedata }) {
   const [location, setLocation] = useState();

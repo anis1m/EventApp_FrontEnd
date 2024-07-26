@@ -2,8 +2,10 @@ import React, { useRef, useState } from "react";
 import "./CreateEventForm.css";
 import Navbar from "../EventAppLayout/Navbar";
 import { useNavigate } from "react-router-dom";
+import uploadimage from "../EventAppLayout/carousalImages/uploadImage.jpg";
 
 function CreateEventForm() {
+  const [fileinfo, setFileinfo] = useState(null);
   const [dateTimeFields, setDateTimeFields] = useState([
     { date: "", start: "", end: "" },
   ]);
@@ -144,11 +146,24 @@ function CreateEventForm() {
                       style={{
                         padding: "0.5rem 1rem",
                         border: "1px solid lightgray",
-                        width: "20rem",
+                        width: "300px",
                         borderRadius: "0.5rem",
                         fontSize: "1rem",
                       }}
                     />
+                    <figure>
+                      <img
+                        src={
+                          fileinfo ? URL.createObjectURL(fileinfo) : uploadimage
+                        }
+                      />
+                      <h5>Drag and Drop or Click to choose image</h5>
+                      <input
+                        type="file"
+                        accept="image/*"
+                        onChange={(e) => setFileinfo(e.target.files[0])}
+                      />
+                    </figure>
                   </aside>
                 </figure>
                 <figure className="part3rightsideinsideCreateEventForm">
